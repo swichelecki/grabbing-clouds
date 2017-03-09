@@ -1,9 +1,27 @@
 (function() {
-    function NewsCtrl() {
+    function NewsCtrl($anchorScroll, $location) {
+        
+        /*
+        * @desc ensures page loads at top of page 
+        */
+        
+        window.scrollTo(0,0);
+        
+        /*
+        * desc uses $anchorScroll provider to make footer work
+        */
+        
+        this.gotoTop = function() {
+            $location.hash("top");
+            
+            $anchorScroll();
+            
+            $location.hash(null);
+        };
         
     }
     
     angular
         .module('grabbing-clouds')
-        .controller('NewsCtrl', [NewsCtrl]);
+        .controller('NewsCtrl', ['$anchorScroll', '$location', NewsCtrl]);
 })();

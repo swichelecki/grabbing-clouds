@@ -1,1 +1,31 @@
-<h1>Hello, World!</h1>
+<section class="carousel">
+    <img src="/assets/images/carousel/billboard_2.jpg">
+</section>
+<section class="email-signup">
+    <section class="email-container container">
+        <div class="email-div-left">
+            <h2 class="newsletter-copy">Sign up for the newsletter:</h2>
+        </div>
+        <div class="email-div-right">
+            <input type="text" class="input" ng-model="emailAddress" ng-init="emailAddress='your email address'" onfocus="value=''">
+            <a class="add-email"><span>></span></a>
+        </div>
+    </section>
+</section>
+<section class="body-background">
+    <section class="body-container container">
+        body container
+    </section>
+    <section class="footer container">
+        <section class="footer-style">
+            <ul>
+                <li><a ng-click="landing.gotoTop()">HOME</a></li>
+                <li><a ui-sref="news">NEWS</a></li>
+                <li><a ui-sref="releases">RELEASES</a></li>
+                <li><a>SHOP</a></li>
+                <li style="border:none;"><a ui-sref="contact">CONTACT</a></li>
+            </ul>
+            <p class="copyright">&copy; 2017 Grabbing Clouds</p>
+        </section>
+    </section>
+</section>

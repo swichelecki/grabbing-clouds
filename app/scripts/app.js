@@ -23,6 +23,10 @@
             url: '/contact',
             controller: 'ContactCtrl as contact',
             templateUrl: '/templates/contact.html'
+        }).state('album', {
+            url: '/album/:data',
+            controller: 'AlbumCtrl as album',
+            templateUrl: '/templates/album.html'
         });
     }
     

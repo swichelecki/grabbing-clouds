@@ -14,7 +14,16 @@
 </section>
 <section class="body-background">
     <section class="body-container container">
-        body container
+        <h1 class="new-releases">Latest Releases</h1>
+        <div ng-repeat="album in landing.albums  | orderBy:'index':reverse=true" class="left-div">
+            <a ui-sref="album({data:album.index})" class="anchor">
+                <div>
+                    <img ng-src="{{album.image}}" width="450">
+                    <h3 class="band-name">{{album.both}}</h3>
+                    <p class="buy-listen">Listen / buy</p>
+                </div>
+            </a>
+        </div>
     </section>
     <section class="footer container">
         <section class="footer-style">

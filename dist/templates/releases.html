@@ -1,6 +1,16 @@
 <section class="body-background">
     <section class="body-container container">
-        body container
+        <div ng-repeat="album in releases.albums | orderBy:'index':reverse=true" class="left-div">
+            <a ui-sref="album({data:album.index})">
+                <div class="show-info">    
+                    <img ng-src="{{album.image}}" width="450">
+                    <div class="overlay">
+                       <h1 class="band-name-hover-band">{{ album.band }}</h1>
+                        <h2 class="band-name-hover-album">{{ album.title }}</h2>
+                    </div>
+                </div> 
+            </a>
+        </div>
     </section>
     <section class="footer container">
         <section class="footer-style">

@@ -8,13 +8,13 @@
         </div>
         <div class="email-div-right">
             <input type="text" class="input" ng-model="emailAddress" ng-init="emailAddress='your email address'" onfocus="value=''">
-            <a class="add-email"><span>></span></a>
+            <a class="add-email"><span class="ion-ios-arrow-forward"></span></a>
         </div>
     </section>
 </section>
 <section class="body-background">
-    <section class="body-container container">
-        <h1 class="new-releases">Latest Releases</h1>
+    <section class="container">
+       <h1 class="new-releases">Latest Releases</h1>
         <div ng-repeat="album in landing.albums  | orderBy:'index':reverse=true" class="left-div">
             <a ui-sref="album({data:album.index})" class="anchor">
                 <div>

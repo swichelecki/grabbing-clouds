@@ -3,26 +3,41 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Grabbing Clouds</title>
+    <!--<link rel="icon" type="image/png" href="/assets/images/#">-->
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
     <div id="scrollArea">
         <a id="top"></a>
-        <nav class="nav">
-            <div class="nav-container container">
-                <ul>
-                    <li><a ui-sref="news">NEWS</a></li>
-                    <li><a ui-sref="releases">RELEASES</a></li>
-                </ul>    
-                <a class="nav-logo" ui-sref="landing"><img src="https://dummyimage.com/150x150/000/fff.jpg&text=150x150"></a>
-                <ul>
-                    <li><a>SHOP</a></li>
-                    <li><a ui-sref="contact">CONTACT</a></li>
+        <nav class="nav clearfix">  
+            <div class="nav-container container clearfix">
+                <a class="small-nav-logo" ui-sref="landing"><img src="https://dummyimage.com/60x60/000/fff.jpg&text=60x60" class="small-logo"></a>
+                <ul class="ul">
+                    <li class="news-li"><a ui-sref="news">NEWS</a></li>
+                    <li class="releases-li"><a ui-sref="releases">RELEASES</a></li>
+                </ul>   
+                <a class="nav-logo" ui-sref="landing"><img src="https://dummyimage.com/150x150/000/fff.jpg&text=150x150" class="large-logo"></a>
+                <ul class="ul">
+                    <li class="shop-li"><a>SHOP</a></li>
+                    <li class="contact-li"><a ui-sref="contact">CONTACT</a></li>
                 </ul>
-            </div>    
-        </nav>
-    </div>
+            </div> 
+                <a>
+                    <span class="ion-social-facebook"></span>
+                </a>    
+                <a>
+                    <span class="ion-social-twitter"></span>
+                </a> 
+                <a>
+                    <span class="ion-social-instagram-outline"></span>
+                </a>
+                <a>
+                    <span class="ion-navicon-round"></span>
+                </a>
+        </nav>   
+    </div>   
     
     <ui-view></ui-view>
     
@@ -35,5 +50,6 @@
     <script src="/scripts/controllers/ContactCtrl.js"></script>
     <script src="/scripts/controllers/AlbumCtrl.js"></script>
     <script src="/scripts/services/Fixtures.js"></script>
+    <script src="/scripts/directives/runBlock.js"></script>
 </body>
 </html>

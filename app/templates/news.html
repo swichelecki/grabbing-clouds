@@ -1,6 +1,15 @@
+<section class="carousel"></section>
 <section class="body-background">
-    <section class="body-container container">
-        body container
+    <section ng-repeat="news in news.news | orderBy:'index':reverse=true" class="container clearfix">
+        <div class="news-left">
+            <h1 class="news-date">{{news.date}}</h1>
+            <p class="news-news">{{news.copy}}</p>
+        </div>
+        <div class="news-image">
+            <img src="{{news.image}}">
+        </div>
+        <div class="news-bottom">
+        </div>
     </section>
     <section class="footer container">
         <section class="footer-style">

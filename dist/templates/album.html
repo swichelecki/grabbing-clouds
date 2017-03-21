@@ -1,1 +1,43 @@
-<h1>This is the album template</h1>
+<section class="carousel"></section>
+<section class="body-background">
+    <section class="container clearfix">
+        <div class="album-div-left">
+            <img ng-src="{{album.album.image}}" width="450"> 
+        </div> 
+        <div class="album-div-top">
+            <h1 class="album-title">{{album.album.title}}</h1>
+            by
+            <h2 class="album-band">{{album.album.band}}</h2>
+        </div>
+        <div class="album-table">
+            <table class="song-list" ng-repeat="song in album.album.songs">
+                <tr class="table-row">
+                    <td class="song-num">{{ $index + 1}}</td>
+                    <td class="song-title">{{ song }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="album-div-right">
+            <a href="" target="_blank" class="button-listen">Listen</a>
+            <a href="" target="_blank" class="button-buy">Buy</a>
+        </div>
+        <div class="release-info">{{album.album.info}}</div>
+    </section>
+    <section class="container">   
+        <div class="album-bottom-image">
+            <img ng-src="{{album.album.bottom}}" width="965">
+        </div>
+    </section>    
+    <section class="footer container">
+        <section class="footer-style">
+            <ul>
+                <li><a ui-sref="landing">HOME</a></li>
+                <li><a ui-sref="news">NEWS</a></li>
+                <li><a ui-sref="releases">RELEASES</a></li>
+                <li><a>SHOP</a></li>
+                <li style="border:none;"><a ui-sref="contact">CONTACT</a></li>
+            </ul>
+            <p class="copyright">&copy; 2017 Grabbing Clouds</p>
+        </section>
+    </section>
+</section>

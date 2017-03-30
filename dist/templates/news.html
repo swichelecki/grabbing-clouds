@@ -1,24 +1,23 @@
-<section class="carousel"></section>
 <section class="body-background">
     <section ng-repeat="news in news.news | orderBy:'index':reverse=true" class="container clearfix">
-        <div class="news-left">
+        <div class="news-left column news-text">
             <h1 class="news-date">{{news.date}}</h1>
             <p class="news-news">{{news.copy}}</p>
         </div>
-        <div class="news-image">
-            <img src="{{news.image}}">
+        <div class="news-image column news-image-res">
+            <img src="{{news.image}}" class="news-image-image">
         </div>
-        <div class="news-bottom">
+        <div class="news-bottom news-bottom-res">
         </div>
     </section>
     <section class="footer container">
         <section class="footer-style">
             <ul>
-                <li><a ui-sref="landing">HOME</a></li>
-                <li><a ng-click="news.gotoTop()">NEWS</a></li>
-                <li><a ui-sref="releases">RELEASES</a></li>
-                <li><a>SHOP</a></li>
-                <li style="border:none;"><a ui-sref="contact">CONTACT</a></li>
+                <li class="footer-home"><a ui-sref="landing">HOME</a></li>
+                <li><a ui-sref="news">NEWS</a></li>
+                <li class="footer-releases"><a ui-sref="releases">RELEASES</a></li>
+                <li class="footer-shop"><a>SHOP</a></li>
+                <li class="footer-contact" style="border:none;"><a ui-sref="contact">CONTACT</a></li>
             </ul>
             <p class="copyright">&copy; 2017 Grabbing Clouds</p>
         </section>

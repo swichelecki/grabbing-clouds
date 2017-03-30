@@ -25,7 +25,7 @@
         
         this.albums = Fixtures.returnDataArray(1);
         
-        console.log(this.albums);
+       // console.log(this.albums);
         
     }
     

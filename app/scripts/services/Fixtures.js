@@ -118,7 +118,7 @@
                 for (var i = 0; i < albums.length; i++) {
                     
                     twoAlbums.push(albums[i]);
-                    console.log('albums[i]', albums[i]);
+                    //console.log('albums[i]', albums[i]);
                 }   
             
                 return twoAlbums;

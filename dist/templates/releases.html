@@ -1,10 +1,9 @@
-<section class="carousel"></section>
 <section class="body-background">
-    <section class="container">
-        <div ng-repeat="album in releases.albums | orderBy:'index':reverse=true" class="left-div">
+    <section class="container clearfix">
+        <div ng-repeat="album in releases.albums | orderBy:'index':reverse=true" class="left-div column half">
             <a ui-sref="album({data:album.index})">
                 <div class="show-info">    
-                    <img ng-src="{{album.image}}" width="450">
+                    <img ng-src="{{album.image}}" class="left-div-image">
                     <div class="overlay">
                        <h1 class="band-name-hover-band">{{ album.band }}</h1>
                         <h2 class="band-name-hover-album">{{ album.title }}</h2>
@@ -16,11 +15,11 @@
     <section class="footer container">
         <section class="footer-style">
             <ul>
-                <li><a ui-sref="landing">HOME</a></li>
+                <li class="footer-home"><a ui-sref="landing">HOME</a></li>
                 <li><a ui-sref="news">NEWS</a></li>
-                <li><a ui-sref="releases.gotoTop()">RELEASES</a></li>
-                <li><a>SHOP</a></li>
-                <li style="border:none;"><a ui-sref="contact">CONTACT</a></li>
+                <li class="footer-releases"><a ui-sref="releases">RELEASES</a></li>
+                <li class="footer-shop"><a>SHOP</a></li>
+                <li class="footer-contact" style="border:none;"><a ui-sref="contact">CONTACT</a></li>
             </ul>
             <p class="copyright">&copy; 2017 Grabbing Clouds</p>
         </section>

@@ -2,7 +2,7 @@
     <img src="/assets/images/carousel/billboard_2.jpg">
 </section>
 <section class="email-signup">
-    <section class="email-container container">
+     <section class="email-container container clearfix">
         <div class="email-div-left">
             <h2 class="newsletter-copy">Sign up for the newsletter:</h2>
         </div>
@@ -13,26 +13,24 @@
     </section>
 </section>
 <section class="body-background">
-    <section class="container">
+    <section class="container clearfix">
        <h1 class="new-releases">Latest Releases</h1>
-        <div ng-repeat="album in landing.albums  | orderBy:'index':reverse=true" class="left-div">
+        <div ng-repeat="album in landing.albums  | orderBy:'index':reverse=true" class="left-div column half">
             <a ui-sref="album({data:album.index})" class="anchor">
-                <div>
-                    <img ng-src="{{album.image}}" width="450">
+                        <img ng-src="{{album.image}}" class="left-div-image">
                     <h3 class="band-name">{{album.both}}</h3>
                     <p class="buy-listen">Listen / buy</p>
-                </div>
             </a>
         </div>
     </section>
     <section class="footer container">
         <section class="footer-style">
             <ul>
-                <li><a ng-click="landing.gotoTop()">HOME</a></li>
+                <li class="footer-home"><a ui-sref="landing">HOME</a></li>
                 <li><a ui-sref="news">NEWS</a></li>
-                <li><a ui-sref="releases">RELEASES</a></li>
-                <li><a>SHOP</a></li>
-                <li style="border:none;"><a ui-sref="contact">CONTACT</a></li>
+                <li class="footer-releases"><a ui-sref="releases">RELEASES</a></li>
+                <li class="footer-shop"><a>SHOP</a></li>
+                <li class="footer-contact" style="border:none;"><a ui-sref="contact">CONTACT</a></li>
             </ul>
             <p class="copyright">&copy; 2017 Grabbing Clouds</p>
         </section>

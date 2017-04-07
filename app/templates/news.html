@@ -1,13 +1,55 @@
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a ui-sref="news">
+                    NEWS
+                </a>
+            </li>
+            <li class="sidebar-brand">
+                <a ui-sref="releases">
+                    RELEASES
+                </a>
+            </li>
+            <li class="sidebar-brand">
+                <a href="#">
+                    SHOP
+                </a>
+            </li>
+            <li class="sidebar-brand">
+                <a ui-sref="contact">
+                    CONTACT
+                </a>
+            </li>
+            <li class="sidebar-brand">
+                <a href="#">
+                    <span class="ion-social-facebook-outline"></span>
+                </a>
+            </li>
+            <li class="sidebar-brand">
+                <a href="#">
+                    <span class="ion-social-twitter-outline"></span>
+                </a>
+            </li>
+            <li class="sidebar-brand">
+                <a href="#">
+                    <span class="ion-social-instagram-outline"></span>
+                </a>
+            </li>
+        </ul>
+    </div> <!-- end sidebar-wrapper -->
+<div id="page-content-wrapper">
 <section class="body-background">
-    <section ng-repeat="news in news.news | orderBy:'index':reverse=true" class="container clearfix">
+    <section ng-repeat="data in news.news | orderBy:'index':reverse=true" class="container clearfix">
         <div class="news-left column news-text">
-            <h1 class="news-date">{{news.date}}</h1>
-            <p class="news-news">{{news.copy}}</p>
+            <h1 class="news-date">{{data.date}}</h1>
+            <h2 class="news-headline">{{data.headline}}</h2>
+            <p class="news-news">{{data.copy}}</p>
         </div>
         <div class="news-image column news-image-res">
-            <img src="{{news.image}}" class="news-image-image">
+            <img src="{{data.image}}" class="news-image-image">
         </div>
-        <div class="news-bottom news-bottom-res">
+        <div ng-style="news.hide(data)" class="news-bottom news-bottom-res">
         </div>
     </section>
     <section class="footer container">
@@ -23,3 +65,5 @@
         </section>
     </section>
 </section>
+</div> <!-- end page-content-wrapper -->    
+</div> <!-- end wrapper -->        

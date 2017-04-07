@@ -1,6 +1,6 @@
 (function() {
     function NewsCtrl($anchorScroll, $location, Fixtures) {
-        
+               
        /*
         * @desc ensures page loads at top of page 
         */
@@ -25,6 +25,18 @@
         
         this.news = Fixtures.returnNewsArray(1);
         
+        /*
+         * @desc hides bottom border if object index is 0
+         */
+        
+        this.hide = function(data) {
+             
+             if (data.index == 0) {
+                 
+                return { 'display': 'none' }
+            } 
+        };
+       
     }
     
     angular

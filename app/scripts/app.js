@@ -31,6 +31,6 @@
     }
     
     angular
-        .module('grabbing-clouds', ['ui.router'])
+        .module('grabbing-clouds', ['ui.bootstrap', 'ngAnimate', 'ui.router'])
         .config(config);  
 })();

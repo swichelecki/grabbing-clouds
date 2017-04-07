@@ -1,5 +1,56 @@
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a ui-sref="news">
+                    NEWS
+                </a>
+            </li>
+            <li class="sidebar-brand">
+                <a ui-sref="releases">
+                    RELEASES
+                </a>
+            </li>
+            <li class="sidebar-brand">
+                <a href="#">
+                    SHOP
+                </a>
+            </li>
+            <li class="sidebar-brand">
+                <a ui-sref="contact">
+                    CONTACT
+                </a>
+            </li>
+            <li class="sidebar-brand">
+                <a href="#">
+                    <span class="ion-social-facebook-outline"></span>
+                </a>
+            </li>
+            <li class="sidebar-brand">
+                <a href="#">
+                    <span class="ion-social-twitter-outline"></span>
+                </a>
+            </li>
+            <li class="sidebar-brand">
+                <a href="#">
+                    <span class="ion-social-instagram-outline"></span>
+                </a>
+            </li>
+        </ul>
+    </div> <!-- end sidebar-wrapper -->
+<div id="page-content-wrapper">
 <section class="carousel">
-    <img src="/assets/images/carousel/billboard_2.jpg">
+    <div uib-carousel active="active" interval="landing.myInterval" no-wrap="false" no-pause="true">
+        <div uib-slide ng-repeat="slide in landing.slides track by slide.id" index="slide.id">
+            <a ui-sref="{{slide.url}}">
+                <img ng-src="{{slide.image}}" style="margin:auto;">
+                <div class="carousel-caption">
+                    <h1 class="carousel-title">{{slide.title}}</h1>
+                    <h2 class="carousel-text">{{slide.text}}</h2>
+                </div>
+            </a> 
+        </div>
+    </div> 
 </section>
 <section class="email-signup">
      <section class="email-container container clearfix">
@@ -8,7 +59,10 @@
         </div>
         <div class="email-div-right">
             <input type="text" class="input" ng-model="emailAddress" ng-init="emailAddress='your email address'" onfocus="value=''">
-            <a class="add-email"><span class="ion-ios-arrow-forward"></span></a>
+            <button class="add-email" type="submit" name="submit">
+		      <span class="ion-ios-arrow-forward"></span>
+	        </button>
+            <!--<a class="add-email"><span class="ion-ios-arrow-forward"></span></a>-->
         </div>
     </section>
 </section>
@@ -36,3 +90,5 @@
         </section>
     </section>
 </section>
+</div> <!-- end page-content-wrapper -->    
+</div> <!-- end wrapper -->       

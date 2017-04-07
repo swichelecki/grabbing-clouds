@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <title>Grabbing Clouds</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="/assets/images/icon_test.png">
+    <link rel="icon" type="image/png" href="/assets/images/GC_icon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/styles/bootstrap.min.css"> <!-- try removing -->
+    <link rel="stylesheet" type="text/css" href="/styles/simple-sidebar.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/style.css">
@@ -14,12 +19,12 @@
         <a id="top"></a>
         <nav class="nav clearfix">  
             <div class="nav-container container clearfix">
-                <a class="small-nav-logo" ui-sref="landing"><img src="https://dummyimage.com/60x60/000/fff.jpg&text=60x60" class="small-logo"></a>
+                <a class="small-nav-logo" ui-sref="landing"><img src="/assets/images/GC_logo.png" class="small-logo" width="60"></a>
                 <ul class="ul">
                     <li class="news-li"><a ui-sref="news">NEWS</a></li>
                     <li class="releases-li"><a ui-sref="releases">RELEASES</a></li>
                 </ul>  
-                <a class="nav-logo" ui-sref="landing"><img src="https://dummyimage.com/150x150/000/fff.jpg&text=150x150" class="large-logo"></a>
+                <a class="nav-logo" ui-sref="landing"><img src="/assets/images/GC_logo.png" class="large-logo"></a>
                 <ul class="ul">
                     <li class="shop-li"><a>SHOP</a></li>
                     <li class="contact-li"><a ui-sref="contact">CONTACT</a></li>
@@ -32,19 +37,23 @@
                     <span class="ion-social-twitter"></span>
                 </a> 
                 <a>
-                    <span class="ion-social-instagram-outline"></span>
+                    <span class="ion-social-instagram"></span>
                 </a>
-                <a>
+                <a href="#menu-toggle" id="menu-toggle">
                     <span class="ion-navicon-round"></span>
                 </a>
         </nav>
         <section class="nav-margin-spacer"></section>
-    </div>   
+    </div> 
     
-    <ui-view></ui-view>
+    <ui-view></ui-view> 
     
+    <script src="/scripts/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="/scripts/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
     <script src="/scripts/app.js"></script>
     <script src="/scripts/controllers/LandingCtrl.js"></script>
     <script src="/scripts/controllers/NewsCtrl.js"></script>

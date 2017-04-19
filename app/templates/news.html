@@ -22,27 +22,27 @@
                 </a>
             </li>
             <li class="sidebar-brand">
-                <a href="#">
+                <a href="https://www.facebook.com/grabbingclouds/" target="_blank">
                     <span class="ion-social-facebook-outline"></span>
                 </a>
             </li>
             <li class="sidebar-brand">
-                <a href="#">
+                <a href="https://twitter.com/grabbingclouds?lang=en" target="_blank">
                     <span class="ion-social-twitter-outline"></span>
                 </a>
             </li>
             <li class="sidebar-brand">
-                <a href="#">
+                <a href="https://www.instagram.com/grabbingclouds/" target="_blank">
                     <span class="ion-social-instagram-outline"></span>
                 </a>
             </li>
         </ul>
-    </div> <!-- end sidebar-wrapper -->
+    </div> <!-- end sidebar-wrapper  | orderBy:'index':reverse=true"-->
 <div id="page-content-wrapper">
 <section class="body-background">
-    <section ng-repeat="data in news.news | orderBy:'index':reverse=true" class="container clearfix">
+    <section ng-repeat="data in news.news.news | orderBy:'index':reverse=true" class="container clearfix">
         <div class="news-left column news-text">
-            <h1 class="news-date">{{data.date}}</h1>
+            <h1 class="news-date">{{data.date | date:'shortDate'}}</h1>
             <h2 class="news-headline">{{data.headline}}</h2>
             <p class="news-news">{{data.copy}}</p>
         </div>

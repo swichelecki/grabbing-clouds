@@ -22,17 +22,17 @@
                 </a>
             </li>
             <li class="sidebar-brand">
-                <a href="#">
+                <a href="https://www.facebook.com/grabbingclouds/" target="_blank">
                     <span class="ion-social-facebook-outline"></span>
                 </a>
             </li>
             <li class="sidebar-brand">
-                <a href="#">
+                <a href="https://twitter.com/grabbingclouds?lang=en" target="_blank">
                     <span class="ion-social-twitter-outline"></span>
                 </a>
             </li>
             <li class="sidebar-brand">
-                <a href="#">
+                <a href="https://www.instagram.com/grabbingclouds/" target="_blank">
                     <span class="ion-social-instagram-outline"></span>
                 </a>
             </li>
@@ -41,7 +41,7 @@
 <div id="page-content-wrapper">
 <section class="body-background">
     <section class="container clearfix">
-        <div ng-repeat="album in releases.albums | orderBy:'index':reverse=true" class="left-div column half">
+        <div ng-repeat="album in releases.albums.albums | orderBy:'index':reverse=true" class="left-div column half">
             <a ui-sref="album({data:album.index})">
                 <div class="show-info">    
                     <img ng-src="{{album.image}}" class="left-div-image">

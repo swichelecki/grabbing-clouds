@@ -1,11 +1,11 @@
 (function() {
-    function LandingCtrl($anchorScroll, $location, Fixtures) {
+    function LandingCtrl($anchorScroll, Albums, Email, $stateParams, $location, $state) {
         
         /*
         * @desc home page Bootstrap billboard
         */
         
-        this.myInterval = 5000;
+        this.myInterval = 7000;
         this.active = 0;
         
         var slides = this.slides = [];
@@ -14,16 +14,18 @@
         this.addSlide = function() {
             slides.push({
                 image: '/assets/images/carousel/billboard_1.jpg',
-                title: 'Lorem ipsum dolor sit',
-                text: 'Lorem ipsum dolor sit amet, tristique nec sed sed enim wisi',
+                title: 'The Memories - Live At Cloud Castle',
+                text: "Get your hands on this stellar live recording from one of bubblegum's filthiest bands.",
                 id: currIndex++,
-                url: 'contact'
+                index: 3,
+                url: 'album/$stateParams.data'
             },{
                 image: '/assets/images/carousel/billboard_2.jpg',
                 title: 'Shawnthony Calypso out now',
-                text: "Some gnarly wax coming your way from some of SF's sickest new bands, The Strange Land and bAd bAd. First 100 on a milky clear/bone vinyl",
+                text: 'Blue tapes. A dog in a pile of hay. AND a praying mantis. This record has to rule.',
                 id: currIndex++,
-                url: 'contact'  
+                index: 4,
+                url: 'album/$stateParams.data'  
             });
         };
         
@@ -53,13 +55,23 @@
          * @desc sends last two album indexs to homepage html
          */
         
-        this.albums = Fixtures.returnArrayHomepage();
+        //this.albums = Fixtures.returnArrayHomepage();
         
-       // console.log(this.albums); 
+        /*
+         * @desc calls for and returns last two album indexes to landing.html
+         */
+        
+        this.albums = Albums.returnArrayHomepage();
+        
+        /*
+         * @desc sends email address to Email service and adds to firebase
+         */
+        
+        this.newEmail = Email;
         
     }
     
     angular
         .module('grabbing-clouds')
-        .controller('LandingCtrl', ['$anchorScroll', '$location', 'Fixtures', LandingCtrl]);
+        .controller('LandingCtrl', ['$anchorScroll', 'Albums', 'Email', '$stateParams', '$location', '$state', LandingCtrl]);
 })();

@@ -22,17 +22,17 @@
                 </a>
             </li>
             <li class="sidebar-brand">
-                <a href="#">
+                <a href="https://www.facebook.com/grabbingclouds/" target="_blank">
                     <span class="ion-social-facebook-outline"></span>
                 </a>
             </li>
             <li class="sidebar-brand">
-                <a href="#">
+                <a href="https://twitter.com/grabbingclouds?lang=en" target="_blank">
                     <span class="ion-social-twitter-outline"></span>
                 </a>
             </li>
             <li class="sidebar-brand">
-                <a href="#">
+                <a href="https://www.instagram.com/grabbingclouds/" target="_blank">
                     <span class="ion-social-instagram-outline"></span>
                 </a>
             </li>
@@ -42,7 +42,8 @@
 <section class="carousel">
     <div uib-carousel active="active" interval="landing.myInterval" no-wrap="false" no-pause="true">
         <div uib-slide ng-repeat="slide in landing.slides track by slide.id" index="slide.id">
-            <a ui-sref="{{slide.url}}">
+          <!--  <a ui-sref="{{slide.url}}"> -->
+                <a ui-sref="album({data:slide.index})">
                 <img ng-src="{{slide.image}}" style="margin:auto;">
                 <div class="carousel-caption">
                     <h1 class="carousel-title">{{slide.title}}</h1>
@@ -59,9 +60,9 @@
         </div>
         <div class="email-div-right">
             <input type="text" class="input" ng-model="emailAddress" ng-init="emailAddress='your email address'" onfocus="value=''">
-            <button class="add-email" type="submit" name="submit">
+            <button class="add-email" type="submit" name="submit" ng-click="landing.newEmail.addEmail(emailAddress)">
 		      <span class="ion-ios-arrow-forward"></span>
-	        </button>
+            </button>
             <!--<a class="add-email"><span class="ion-ios-arrow-forward"></span></a>-->
         </div>
     </section>
@@ -69,7 +70,7 @@
 <section class="body-background">
     <section class="container clearfix">
        <h1 class="new-releases">Latest Releases</h1>
-        <div ng-repeat="album in landing.albums  | orderBy:'index':reverse=true" class="left-div column half">
+        <div ng-repeat="album in landing.albums | orderBy:'index':reverse=true" class="left-div column half">
             <a ui-sref="album({data:album.index})" class="anchor">
                         <img ng-src="{{album.image}}" class="left-div-image">
                     <h3 class="band-name">{{album.both}}</h3>

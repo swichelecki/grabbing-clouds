@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="/assets/images/GC_icon.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/styles/bootstrap.min.css"> <!-- try removing -->
+    <link rel="stylesheet" type="text/css" href="/styles/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/styles/simple-sidebar.css">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:700" rel="stylesheet">
@@ -26,17 +26,17 @@
                 </ul>  
                 <a class="nav-logo" ui-sref="landing"><img src="/assets/images/GC_logo.png" class="large-logo"></a>
                 <ul class="ul">
-                    <li class="shop-li"><a>SHOP</a></li>
+                    <li class="shop-li"><a href="https://grabbingclouds.bandcamp.com/merch" target="_blank">SHOP</a></li>
                     <li class="contact-li"><a ui-sref="contact">CONTACT</a></li>
                 </ul> 
             </div> 
-                <a>
+                <a href="https://www.facebook.com/grabbingclouds/" target="_blank">
                     <span class="ion-social-facebook"></span>
                 </a>    
-                <a>
+                <a href="https://twitter.com/grabbingclouds?lang=en" target="_blank">
                     <span class="ion-social-twitter"></span>
                 </a> 
-                <a>
+                <a href="https://www.instagram.com/grabbingclouds/" target="_blank">
                     <span class="ion-social-instagram"></span>
                 </a>
                 <a href="#menu-toggle" id="menu-toggle">
@@ -54,6 +54,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="/scripts/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script src="/scripts/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyA9LyOYgOb4G5Ro_W0V2vW8AevFtPbMgqM",
+        authDomain: "grabbing-clouds.firebaseapp.com",
+        databaseURL: "https://grabbing-clouds.firebaseio.com",
+        projectId: "grabbing-clouds",
+        storageBucket: "grabbing-clouds.appspot.com",
+        messagingSenderId: "605998151097"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
     <script src="/scripts/app.js"></script>
     <script src="/scripts/controllers/LandingCtrl.js"></script>
     <script src="/scripts/controllers/NewsCtrl.js"></script>
@@ -61,6 +75,9 @@
     <script src="/scripts/controllers/ContactCtrl.js"></script>
     <script src="/scripts/controllers/AlbumCtrl.js"></script>
     <script src="/scripts/services/Fixtures.js"></script>
+    <script src="/scripts/services/Email.js"></script>
+    <script src="/scripts/services/News.js"></script>
+    <script src="/scripts/services/Albums.js"></script>
     <script src="/scripts/directives/runBlock.js"></script>
 </body>
 </html>

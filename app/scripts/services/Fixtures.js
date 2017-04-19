@@ -54,16 +54,20 @@
             band: 'Acid Owl',
             title: 'Life Education',
             both: 'Acid Owl - Life Education',
+            listen: 'https://bandcamp.com/',
+            buy: 'https://bandcamp.com/',       
             songs: ['Acid Owl Meets Eagle Wizard', 'Life Education Guru', 'Beyond the Owl Dimension', 'Rainbow Terminus', 'Cognitive Claw', 'Journey to the Earth Womb', 'The Night Hunt'],
             info: 'Lorem ipsum dolor sit amet, tristique nec sed sed enim wisi placerat, quis lorem diam vel, turpis at luctus. Eget non. Volutpat etiam rutrum nec diam et. Justo parturient, cupiditate quis, habitasse feugiat metus non nihil. Tellus urna congue curabitur a, ut vel justo donec maecenas commodo hendrerit, faucibus massa accumsan, nec in ut eleifend.',    
             bottom: '/assets/images/album_bottom/bottom_acidaowl.jpg'
             },
             {
-            index: 5,
+            index: 5,   
             image: '/assets/images/albums/badbad_strangeland.jpg',
             band: 'The Strange Land / bAd bAd',
             title: 'Split 7"',
             both: 'The Strange Land / bAd bAd - Split 7"',
+            listen: 'https://bandcamp.com/',
+            buy: 'https://bandcamp.com/',    
             songs: ['The Strange Land - Real', 'The Strange Land - Seer', 'bAd bAd - pickitapart', 'bAd bAd - hot lAvA'],
             info: 'Lorem ipsum dolor sit amet, tristique nec sed sed enim wisi placerat, quis lorem diam vel, turpis at luctus. Eget non. Volutpat etiam rutrum nec diam et. Justo parturient, cupiditate quis, habitasse feugiat metus non nihil. Tellus urna congue curabitur a, ut vel justo donec maecenas commodo hendrerit, faucibus massa accumsan, nec in ut eleifend.',
             bottom: '/assets/images/album_bottom/bottom_strangeland_badbad.jpg'
@@ -91,7 +95,7 @@
                        
             var last = homeAlbums[lastIndex];
             
-            if (twoAlbums = []) {
+            if (twoAlbums = []) /*probably need to remove if statement to add more*/ {
             
             var lastReturn = Fixtures.homeAlbums(pen, last);
             

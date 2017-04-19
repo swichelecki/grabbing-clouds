@@ -1,5 +1,5 @@
 (function() {
-    function ReleasesCtrl(Fixtures) {
+    function ReleasesCtrl(Fixtures, Albums) {
         
         /*
         * @desc ensures page loads at top of page 
@@ -23,13 +23,19 @@
         * @desc brings album object data to html
         */
         
-        this.albums = Fixtures.returnDataArray(1);
+       // FIXTURE DATA CALL this.albums = Fixtures.returnDataArray(1);
         
-       // console.log(this.albums);
+        /*
+        * @desc brings album object data to template from firebase
+        */
+       
+         this.albums = Albums; 
+        
+        console.log('>>>', this.albums);
         
     }
     
     angular
         .module('grabbing-clouds')
-        .controller('ReleasesCtrl', ['Fixtures', ReleasesCtrl]);
+        .controller('ReleasesCtrl', ['Fixtures', 'Albums', ReleasesCtrl]);
 })();

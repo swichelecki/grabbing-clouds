@@ -10,7 +10,12 @@
         .state('landing', {
             url: '/',
             controller: 'LandingCtrl as landing',
-            templateUrl: '/templates/landing.html'
+            templateUrl: '/templates/landing.html',
+            resolve: {
+                resolvedLanding: function(Albums) {
+                    return Albums.albums.$loaded();
+                }
+            }
         }).state('news', {
             url: '/news',
             controller: 'NewsCtrl as news',
@@ -26,11 +31,16 @@
         }).state('album', {
             url: '/album/:data',
             controller: 'AlbumCtrl as album',
-            templateUrl: '/templates/album.html'
+            templateUrl: '/templates/album.html',
+            resolve: {
+                resolvedArray: function(Albums){
+                    return Albums.albums.$loaded();
+                }
+            }
         });
     }
     
     angular
-        .module('grabbing-clouds', ['ui.bootstrap', 'ngAnimate', 'ui.router'])
+        .module('grabbing-clouds', ['ui.bootstrap', 'ngAnimate', 'ui.router', 'firebase'])
         .config(config);  
 })();

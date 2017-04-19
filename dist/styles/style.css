@@ -34,13 +34,28 @@ img {
 .container {
     margin: 0 auto;
     max-width: 64rem;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
-.body-background {
-  /*  background-color: #f0f0f0; */
-    background-image: url('/assets/images/gradient.jpg');
+/*.body-background {
+    background-color: #f0f0f0; 
+    background: #a7ce02;
+    background-image: url('/assets/images/gradient_clear.png');
+    background-repeat: repeat-x;
     position: relative;
     min-height: 400px;
+}*/
+
+
+.body-background {
+    height: 100%;
+    background: #a7ce02; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#a7ce02, #ff9900); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#a7ce02, #fe9900); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#a7ce02, #fe9900); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#a7ce02, #fe9900); /* Standard syntax (must be last) */
+    background: linear-gradient(#a7ce02, #fe9900); /* Standard syntax (must be last) */
 }
 
 #scrollArea {
@@ -414,6 +429,7 @@ body {
 }
 
 .input {
+    border-radius: 0;
     padding-left: 1rem;
     width: 260px;
     border: 1px solid white;
@@ -424,7 +440,7 @@ body {
 
 .add-email {
     position: relative;
-    top: .3rem;
+    top: 5px;
     margin-left: -5px;
    /* background-color: #666; */
     background-color: white;
@@ -753,9 +769,9 @@ body {
 .contact-div {
     position: relative;
     width: 100%;
-    padding-left: 2.6rem;
+    padding-left: 2.6rem !important;
     padding-top: 2.6rem;
-    padding-right: 2.6rem;
+    padding-right: 2.6rem !important;
     padding-bottom: 1rem;
     font-size: 16px;
 }
@@ -992,6 +1008,12 @@ body {
     
     .footer-contact {
         margin-top: .5rem;    
+    }
+    
+    .footer .footer-style li {
+
+    font-size: 16px;
+
     }
     
       .left-div-image {

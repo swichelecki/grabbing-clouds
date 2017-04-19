@@ -1,5 +1,5 @@
 (function() {
-    function NewsCtrl($anchorScroll, $location, Fixtures) {
+    function NewsCtrl($anchorScroll, $location, Fixtures, News) {
                
        /*
         * @desc ensures page loads at top of page 
@@ -23,7 +23,13 @@
          * @desc returns news data to template
          */
         
-        this.news = Fixtures.returnNewsArray(1);
+        // FIXTURES  this.news = Fixtures.returnNewsArray(1);
+        
+        /*
+         * @desc returns news data to template from News service
+         */
+        
+        this.news = News;
         
         /*
          * @desc hides bottom border if object index is 0
@@ -41,5 +47,5 @@
     
     angular
         .module('grabbing-clouds')
-        .controller('NewsCtrl', ['$anchorScroll', '$location', 'Fixtures', NewsCtrl]);
+        .controller('NewsCtrl', ['$anchorScroll', '$location', 'Fixtures', 'News', NewsCtrl]);
 })();

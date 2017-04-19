@@ -1,5 +1,5 @@
 (function() {
-    function AlbumCtrl(Fixtures, $stateParams, $location, $state) {
+    function AlbumCtrl(Fixtures, $stateParams, $location, $state, Albums) {
         
         /*
         * @desc ensures page loads at top of page 
@@ -25,15 +25,25 @@
         
         var albumIndex = $stateParams.data;
         
+        console.log('albumIndex in AlbumCtrl', albumIndex);
+    
         /*
         *@desc uses index from param to access data from fixtures.js
         */
         
-        this.album = Fixtures.sentIndex(albumIndex); 
+       // this.album = Fixtures.sentIndex(albumIndex); 
         
+        /*
+        *@desc uses index from url parameter to access data from firebase
+        */
+        
+        this.album = Albums.sentIndex(albumIndex);
+              
+        console.log('in CTL object returned to template', this.album);
+              
     }
     
     angular
         .module('grabbing-clouds')
-        .controller('AlbumCtrl', ['Fixtures', '$stateParams', '$location', '$state', AlbumCtrl]);
+        .controller('AlbumCtrl', ['Fixtures', '$stateParams', '$location', '$state', 'Albums', AlbumCtrl]);
 })();

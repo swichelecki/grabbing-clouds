@@ -41,7 +41,11 @@
 <div id="page-content-wrapper">
 <section class="body-background">
     <section class="container clearfix">
-        <div ng-repeat="album in releases.albums.albums | orderBy:'index':reverse=true" class="left-div column half">
+        <div class="search-container">
+            <input type="text" class="search-input" ng-model="searchBox" placeholder="Filter albums" onfocus="this.placeholder=''" onblur="placeholder='Filter albums'">
+            <span class="magnifying-glass ion-android-search"></span>
+        </div>    
+        <div ng-repeat="album in releases.albums.albums | orderBy:'index':reverse=true | filter:searchBox" class="release-div column half">
             <a ui-sref="album({data:album.index})">
                 <div class="show-info">    
                     <img ng-src="{{album.image}}" class="left-div-image">

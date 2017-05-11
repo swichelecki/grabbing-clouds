@@ -38,11 +38,10 @@
             </li>
         </ul>
     </div> <!-- end sidebar-wrapper -->
-<div id="page-content-wrapper">
+<div id="page-content-wrapper"> 
 <section class="carousel">
     <div uib-carousel active="active" interval="landing.myInterval" no-wrap="false" no-pause="true">
         <div uib-slide ng-repeat="slide in landing.slides track by slide.id" index="slide.id">
-          <!--  <a ui-sref="{{slide.url}}"> -->
                 <a ui-sref="album({data:slide.index})">
                 <img ng-src="{{slide.image}}" style="margin:auto;">
                 <div class="carousel-caption">
@@ -63,7 +62,6 @@
             <button class="add-email" type="submit" name="submit" ng-click="landing.newEmail.addEmail(emailAddress)">
 		      <span class="ion-ios-arrow-forward"></span>
             </button>
-            <!--<a class="add-email"><span class="ion-ios-arrow-forward"></span></a>-->
         </div>
     </section>
 </section>

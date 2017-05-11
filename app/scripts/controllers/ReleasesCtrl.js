@@ -31,8 +31,6 @@
        
          this.albums = Albums; 
         
-        console.log('>>>', this.albums);
-        
     }
     
     angular

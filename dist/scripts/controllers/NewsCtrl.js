@@ -20,12 +20,6 @@
         };
         
         /*
-         * @desc returns news data to template
-         */
-        
-        // FIXTURES  this.news = Fixtures.returnNewsArray(1);
-        
-        /*
          * @desc returns news data to template from News service
          */
         

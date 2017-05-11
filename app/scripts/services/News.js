@@ -22,25 +22,50 @@
         News.news = news;
         
         /*
-        * @desc sends object data to firebase. ATTN: Use function call to send new object
+        * @desc sends object data to firebase.
         */
         
-        News.sendReturnNews = function() {
+        News.sendReturnNews = function(headline, copy, newsImage) {
         
         var d = new Date();
         var time = d.getTime();
             
+        var index = news.length -1;
+            
+        var newIndex = index +1;
+            
+        if (image == undefined || '/assets/images/news/...Leave blank for default image') {
+            
+            image = '/assets/images/news/news_default.jpg';
+        }
+            
         news.$add({
+            index: newIndex,
+            date: time,
+            headline: headline,
+            copy: copy,
+            image: newsIimage
+        });
+            
+       /* news.$add({
             index: 4,    
             date: time,
             headline: 'Headline Lorem ipsum',    
             copy: 'Index 4. Top. Lorem ipsum dolor sit amet, tristique nec sed sed enim wisi placerat, quis lorem diam vel, turpis at luctus. Eget non. Volutpat etiam rutrum nec diam et. Justo parturient, cupiditate quis, habitasse feugiat metus non nihil. Lorem ipsum dolor sit amet, tristique nec sed sed enim wisi placerat, quis lorem diam vel, turpis at luctus. Eget non. Volutpat etiam rutrum nec diam et. Justo parturient, cupiditate quis, habitasse feugiat metus non nihil. Volutpat etiam rutrum nec diam et. Justo parturient, cupiditate quis, habitasse feugiat metus non nihil.',
             image: '/assets/images/news_default.jpg'
-            });
+            }); */
             
-        };
+        }; 
         
-      //  News.sendReturnNews();
+        /*
+         * @desc deletes news object from news array
+         */
+        
+        News.deleteNews = function(newsItem) {        
+        
+            news.$remove(newsItem);
+        
+        };
         
         return News;
     }

@@ -14,6 +14,9 @@
             resolve: {
                 resolvedLanding: function(Albums) {
                     return Albums.albums.$loaded();
+                },
+                resolvedCarousel: function(Carousel) {
+                    return Carousel.carousel.$loaded();
                 }
             }
         }).state('news', {
@@ -37,6 +40,10 @@
                     return Albums.albums.$loaded();
                 }
             }
+        }).state('admin', {
+            url: '/admin',
+            controller: 'AdminCtrl as admin',
+            templateUrl: '/templates/admin.html'
         });
     }
     

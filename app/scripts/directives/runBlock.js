@@ -168,7 +168,10 @@
             } else if  (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistanceTop) {
                 fullNav();
                 console.log('fullNav called in scroll event listener');
-            } 
+            } else if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistanceVeryTop && document.documentElement.clientWidth <= 990) {
+                responsiveWidth();
+                console.log('responsiveWidth called in scroll event listener - for if you scroll up on mobile device');
+            }
         });
         
         window.addEventListener('resize', function(event) {

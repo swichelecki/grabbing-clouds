@@ -1,5 +1,5 @@
 (function() {
-    function LandingCtrl($anchorScroll, Albums, Email, $stateParams, $location, $state) {
+    function LandingCtrl($anchorScroll, Albums, Email, $stateParams, $location, $state, Carousel) {
         
         /*
         * @desc home page Bootstrap billboard
@@ -8,10 +8,13 @@
         this.myInterval = 7000;
         this.active = 0;
         
-        var slides = this.slides = [];
-        var currIndex = 0;
+        //var slides = this.slides = [];
+                   
+        this.slides = Carousel.carousel;
         
-        this.addSlide = function() {
+       // var currIndex = 0;
+        
+       /* this.addSlide = function() {
             slides.push({
                 image: '/assets/images/carousel/billboard_1.jpg',
                 title: 'The Memories - Live At Cloud Castle',
@@ -26,7 +29,7 @@
                 id: currIndex++,
                 index: 4,
                 url: 'album/$stateParams.data'  
-            });
+            }); 
         };
         
         for (var i = 0; i < 1; i++) {
@@ -73,5 +76,5 @@
     
     angular
         .module('grabbing-clouds')
-        .controller('LandingCtrl', ['$anchorScroll', 'Albums', 'Email', '$stateParams', '$location', '$state', LandingCtrl]);
+        .controller('LandingCtrl', ['$anchorScroll', 'Albums', 'Email', '$stateParams', '$location', '$state', 'Carousel', LandingCtrl]);
 })();

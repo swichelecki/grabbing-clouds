@@ -43,6 +43,7 @@
     <section class="container clearfix">
         <div class="album-div-left">
             <img ng-src="{{album.album.image}}" width="450" class="album-page-cover"> 
+            <iframe id="bandcamp" ng-src="" seamless></iframe>
         </div> 
         <div class="album-div-top">
             <h1 class="album-title">{{album.album.title}}</h1>
@@ -53,16 +54,13 @@
         </div>
         <div class="album-table">
             <table class="song-list" ng-repeat="song in album.album.songs">
-                <tr class="table-row">
-                    <td class="song-num">{{ $index + 1}}</td>
+                <tr>
+                    <td class="song-num">{{ $index + 1}}.</td>
                     <td class="song-title">{{ song }}</td>
                 </tr>
             </table>
         </div>
-        <div class="album-div-right">
-            <a href="{{album.album.listen}}" target="_blank" class="button-listen">Listen</a>
-            <a href="{{album.album.buy}}" target="_blank" class="button-buy">Buy</a>
-        </div>
+        <a href="{{album.album.buy}}" target="_blank" class="button-buy">Buy</a>
         <div class="release-info">{{album.album.info}}</div>
     </section>
     <section class="container">   

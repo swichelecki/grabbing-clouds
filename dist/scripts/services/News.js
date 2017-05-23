@@ -58,6 +58,17 @@
         }; 
         
         /*
+         * @desc prompts confirm box before sending news object to News.deleteNews
+         */
+        
+        News.deleteConfirm = function(newsItem) {
+            if (confirm("Are you sure you want to delete this?") == true) {
+                News.deleteNews(newsItem); 
+            }
+        };
+        
+        
+        /*
          * @desc deletes news object from news array
          */
         

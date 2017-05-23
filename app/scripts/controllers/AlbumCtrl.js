@@ -40,7 +40,17 @@
         this.album = Albums.sentIndex(albumIndex);
               
         console.log('in CTL object returned to template', this.album);
-              
+        
+        /*
+        *@desc the three lines below bring the bandcamp iframe url from database to html
+        */
+        
+        var url = Albums.sentIndex(albumIndex);
+        
+        var bandurl = url.bandcamp;
+        
+        document.getElementById("bandcamp").src = bandurl;
+        
     }
     
     angular

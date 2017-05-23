@@ -55,6 +55,16 @@
         };
         
         /*
+         * @desc prompts confirm box before sending album object to Carousel.deleteCarousel
+         */
+        
+        Carousel.deleteConfirm = function(carousels) {
+            if (confirm("Are you sure you want to delete this?") == true) {
+                Carousel.deleteCarousel(carousels); 
+            }
+        };
+        
+        /*
          * @desc deletes carousel object from carousel array 
          */
         

@@ -25,7 +25,7 @@
          * @desc sends object data to firebase.
          */
         
-        Albums.addAlbum = function(image, band, title, both, listen, buy, info, bottom, songOne, songTwo, songThree, songFour, songFive, songSix, songSeven, songEight, songNine, songTen, songEleven, songTwelve, songThirteen, songFourteen, songFifteen, songSixteen, songSeventeen, songEighteen, songNineteen, songTwenty) {
+        Albums.addAlbum = function(image, band, title, both, buy, info, bottom, iframe, songOne, songTwo, songThree, songFour, songFive, songSix, songSeven, songEight, songNine, songTen, songEleven, songTwelve, songThirteen, songFourteen, songFifteen, songSixteen, songSeventeen, songEighteen, songNineteen, songTwenty) {      
             
         var albumIndex = albums.length - 1;  
             
@@ -119,12 +119,12 @@
             band: band,
             title: title,
             both: both,
-            listen: listen,
             buy: buy,
             songs: arraySongs,
             info: info,
-            bottom: bottom
-        });    
+            bottom: bottom,
+            bandcamp: iframe
+        });  
             
         /*albums.$add({
             index: 4,
@@ -139,6 +139,16 @@
             bottom: '/assets/images/album_bottom/bottom_acidaowl.jpg'
         });*/
             
+        };
+        
+        /*
+         * @desc prompts confirm box before sending album object to Albums.deleteAlbum
+         */
+        
+        Albums.deleteConfirm = function(album) {
+            if (confirm("Are you sure you want to delete this?") == true) {
+                Albums.deleteAlbum(album); 
+            }
         };
         
         /*

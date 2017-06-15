@@ -12,7 +12,7 @@
                 </a>
             </li>
             <li class="sidebar-brand">
-                <a href="#">
+                <a href="https://grabbingclouds.bandcamp.com/merch" target="_blank">
                     SHOP
                 </a>
             </li>
@@ -38,15 +38,15 @@
             </li>
         </ul>
     </div> <!-- end sidebar-wrapper -->
-<div id="page-content-wrapper">
+<div id="page-content-wrapper" ng-init="releases.onload()">
 <section class="body-background">
     <section class="container clearfix">
         <div class="search-container">
             <input type="text" class="search-input" ng-model="searchBox" placeholder="Filter albums" onfocus="this.placeholder=''" onblur="placeholder='Filter albums'">
             <span class="magnifying-glass ion-android-search"></span>
-        </div>    
+        </div> 
         <div ng-repeat="album in releases.albums.albums | orderBy:'index':reverse=true | filter:searchBox" class="release-div column half">
-            <a ui-sref="album({data:album.index})">
+            <a ui-sref="album({data:album.index})" class="anchor">
                 <div class="show-info">    
                     <img ng-src="{{album.image}}" class="left-div-image">
                     <div class="overlay">
@@ -54,7 +54,13 @@
                         <h2 class="band-name-hover-album">{{ album.title }}</h2>
                     </div>
                 </div> 
+                <h3 class="release-album-info">{{album.both}}</h3>
             </a>
+        </div>
+        <div class="to-top-container" id="to-top">
+            <button class="to-top-button" ng-click="releases.gotoTop()">Top<span class="ion-arrow-up-a"></span></button>
+            <input type="text" class="search-input-small" id="small-input" ng-model="searchBox" placeholder="Filter albums" onfocus="this.placeholder=''" onblur="placeholder='Filter albums'" ng-blur="releases.displayFalse()">
+            <span class="magnifying-glass-two ion-android-search"></span>
         </div>
     </section>
     <section class="footer container">
@@ -62,8 +68,8 @@
             <ul>
                 <li class="footer-home"><a ui-sref="landing">HOME</a></li>
                 <li><a ui-sref="news">NEWS</a></li>
-                <li class="footer-releases"><a ui-sref="releases">RELEASES</a></li>
-                <li class="footer-shop"><a>SHOP</a></li>
+                <li class="footer-releases"><a ng-click="releases.gotoTop()">RELEASES</a></li>
+                <li class="footer-shop"><a href="https://grabbingclouds.bandcamp.com/merch" target="_blank">SHOP</a></li>
                 <li class="footer-contact" style="border:none;"><a ui-sref="contact">CONTACT</a></li>
             </ul>
             <p class="copyright">&copy; 2017 Grabbing Clouds</p>

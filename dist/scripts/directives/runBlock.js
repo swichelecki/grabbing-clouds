@@ -1,19 +1,20 @@
 (function() {
-    function runBlock() {
+    function runBlock($anchorScroll, $location) {
     
-    /*
+   /*
     * @desc this function enables mobile side nav toggle    
     */
         
     $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
-    });  
-        
-        
+    }); 
+                
     /*
-     * @desc all code below enables the collapsable nav
+     * @desc DOM node objects used to enable the collapsable / responsive nav
      */
+    
+    var newsColor = document.getElementById('yellow');
     var nav = document.getElementsByClassName('nav');
     var navLogo = document.getElementsByClassName('nav-logo');    
     var logo = document.getElementsByClassName('large-logo');
@@ -28,8 +29,21 @@
     var instagram = document.getElementsByClassName('ion-social-instagram');    
     var twitter = document.getElementsByClassName('ion-social-twitter');
     var facebook = document.getElementsByClassName('ion-social-facebook');
-    var burger = document.getElementsByClassName('ion-navicon-round');    
+    var burger = document.getElementsByClassName('ion-navicon-round');
+      
+    /*
+     * @desc DOM node objects used to enable nav $anchorScroll
+     */    
+        
+    var newsTop = document.getElementById('news-top');
+    var releasesTop = document.getElementById('releases-top');
+    var contactTop = document.getElementById('contact-top');
+    var homeTop = document.getElementById('home-top');
     
+    /*
+     * @desc functions used to enable the collapsable / responsive nav
+     */
+        
     var collapsedNav = function() {
         nav[0].style.position = 'fixed';
         nav[0].style.top = 0;
@@ -116,7 +130,7 @@
        instagram[0].style.display = 'none';
        twitter[0].style.display = 'none';
        facebook[0].style.display = 'none';
-       burger[0].style.display = null;     
+       burger[0].style.display = null; 
     };  
         
     var responsiveWidth = function() {  
@@ -143,11 +157,30 @@
        navContainer[0].style.paddingTop = '.2rem';
        navContainer[0].style.width = '100%'; 
     }; 
+      
+    /*
+     * @desc function used to enable nav $anchorScroll
+     */
+        
+    var gotoTop = function() {
+        
+            $location.hash("top");
+            
+            $anchorScroll();
+            
+            $location.hash(null);
+        };
+        
         
     window.onload = function() {
+        
+       /*
+        * @desc getBoundingClientRect() objects and event listeners used to enable collapsable / responsive nav
+        */
+        
         var nav = document.getElementsByClassName('nav')[0];
         var scrollDistance = nav.getBoundingClientRect().bottom - 66;
-        var scrollDistanceTop = nav.getBoundingClientRect().top + 99;
+        var scrollDistanceTop = nav.getBoundingClientRect().bottom - 66;
         var scrollDistanceVeryTop = nav.getBoundingClientRect().top;
         
         // IMPORTANT - ensures responsiveWidth() fires if page loads on mobile 
@@ -165,13 +198,10 @@
             } else if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance) {
                 console.log('collapsedNav called in scroll event listener');
                 collapsedNav();
-            } else if  (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistanceTop) {
+            } else if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistanceTop) {
                 fullNav();
                 console.log('fullNav called in scroll event listener');
-            } else if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistanceVeryTop && document.documentElement.clientWidth <= 990) {
-                responsiveWidth();
-                console.log('responsiveWidth called in scroll event listener - for if you scroll up on mobile device');
-            }
+            } 
         });
         
         window.addEventListener('resize', function(event) {
@@ -186,14 +216,32 @@
                 console.log('keep collaped nav past scrollDistance');
                 collapsedNav();
             }
-                
-            });      
-           
+        });
+        
+       /*
+        * @desc event listener used to enable $anchorScroll
+        */
+        
+        newsTop.addEventListener('click', function(event) {
+            gotoTop();
+        }); 
+        
+        releasesTop.addEventListener('click', function(event) {
+            gotoTop(); 
+        });
+        
+        contactTop.addEventListener('click', function(event) {
+            gotoTop(); 
+        });
+        
+        homeTop.addEventListener('click', function(event) {
+            gotoTop(); 
+        });
     }; 
   
-    }
+}
     
     angular
         .module('grabbing-clouds')
-        .run([runBlock]);
+        .run(['$anchorScroll', '$location', runBlock]);
 })();

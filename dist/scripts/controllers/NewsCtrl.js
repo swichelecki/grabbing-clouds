@@ -36,6 +36,26 @@
                 return { 'display': 'none' }
             } 
         };
+        
+       /*
+        * desc makes body-height class taller for iPads
+        */
+        
+        var bodyHeight = angular.element(document.getElementsByClassName('body-background'));    
+        
+        var ipadHeight = function() {
+            bodyHeight[0].style.minHeight = '958px';
+        };
+        
+        var ipadProHeight = function() {
+            bodyHeight[0].style.minHeight = '1210px';
+        };
+        
+         if (window.innerHeight > 950 && window.innerHeight < 1100) {
+            ipadHeight();
+        } else if (window.innerHeight > 1100) {
+            ipadProHeight();
+        }
        
     }
     

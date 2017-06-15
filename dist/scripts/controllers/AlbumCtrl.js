@@ -1,5 +1,5 @@
 (function() {
-    function AlbumCtrl(Fixtures, $stateParams, $location, $state, Albums) {
+    function AlbumCtrl(Fixtures, $stateParams, $anchorScroll, $location, $state, Albums) {
         
         /*
         * @desc ensures page loads at top of page 
@@ -55,5 +55,5 @@
     
     angular
         .module('grabbing-clouds')
-        .controller('AlbumCtrl', ['Fixtures', '$stateParams', '$location', '$state', 'Albums', AlbumCtrl]);
+        .controller('AlbumCtrl', ['Fixtures', '$stateParams', '$anchorScroll', '$location', '$state', 'Albums', AlbumCtrl]);
 })();

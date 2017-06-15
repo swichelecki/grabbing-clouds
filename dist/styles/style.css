@@ -444,18 +444,15 @@ body {
 }
 
 .add-email {
-    position: relative;
-    top: 5px;
-    margin-left: -5px;
-   /* background-color: #666; */
+    position: absolute;
+    margin-top: 0;
+    margin-left: 0;
     background-color: white;
-   /* padding: 2px 18px;  */
     padding: 0px 0px;
     width: 47px;
     height: 32px;
     cursor: pointer;
-    border: none;
-    
+    border: none; 
 }
 
 .add-email a:hover {
@@ -580,6 +577,68 @@ body {
     font-size: 28px;
     color: white;
     background-color: #ff33ff;
+}
+
+.magnifying-glass-two {
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    padding-top: .2rem;
+    padding-left: .6rem;
+    width: 40px;
+    height: 2.5rem;
+    font-size: 28px;
+    color: white;
+    background-color: #ff33ff;
+}
+
+.release-album-info {
+   display: none;  
+}
+
+.to-top-container {
+    display: none;
+    position: fixed;
+    bottom: 3rem; 
+    margin-left: -185px;
+    width: 200px;
+}
+
+.search-input-small {
+    /*width: 82%;*/
+    width: 160px;
+    position: relative;
+    display: inline-block;
+    border-radius: 0;
+    outline-width: 0;
+    padding-left: .5rem;
+    border-top: 1px solid #ff33ff;
+    border-left: 1px solid #ff33ff;
+    border-bottom: 1px solid #ff33ff;
+    border-right: none;
+    height: 2.5rem;
+    font-size: 18px;
+    color: #ff33ff;
+}
+
+.to-top-button {
+    width: 200px;
+    height: 2.5rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    margin-left: 0rem;
+    margin-top: 0rem;
+    margin-bottom: 1.2rem;
+    font-size: 20px;
+    background-color: white;
+    border: 1px solid #ff33ff;
+    color: #ff33ff;
+    outline-width: 0;
+}
+
+.ion-arrow-up-a {
+    font-size: 22px;
+    margin-left: .5rem;
 }
 
 /* END RELEASE PAGE */
@@ -719,6 +778,7 @@ body {
 .album-bottom-image {
     position: relative;
     display: block;
+    text-align: center;
     /*padding-left: 1.8rem;*/
     padding-left: 0;
 }
@@ -805,11 +865,26 @@ body {
 .contact-div {
     position: relative;
     width: 100%;
-    padding-left: 2.6rem !important;
+    padding-left: 2rem !important;
     padding-top: 2.6rem;
-    padding-right: 2.6rem !important;
+    padding-right: 3.2rem !important;
     padding-bottom: 1rem;
     font-size: 16px;
+}
+
+.contact-email {
+    color: #ff33ff;
+    text-decoration: none;
+}
+
+.contact-email:visited {
+    color: #ff33ff;
+    text-decoration: none;
+}
+
+.contact-email:hover {
+    color: #ff33ff;
+    text-decoration: none;
 }
 
 /* END CONTACT PAGE */
@@ -1029,10 +1104,6 @@ body {
         
     } 
     
-    .album-bottom-image {
-        padding-left: 1.8rem;
-    }
-    
     .release-info {
         margin-bottom: .2rem;
     }
@@ -1051,6 +1122,103 @@ body {
         display: block;
     }
 
+}
+
+@media (min-width: 320px) and (max-width: 990px) {
+    
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 3;
+    }
+    
+    .nav-margin-spacer {
+        margin-top: 66px;
+    }
+    
+    .large-logo {
+        display: none;
+    }
+    
+    .ion-social-twitter {
+        display: none;
+    }
+    
+    .ion-social-facebook {
+        display: none;
+    }
+    
+    .ion-social-instagram {
+        display: none;
+    }
+    
+    .ion-navicon-round {
+        display: inline-block;
+        padding-top: .7rem;
+    }
+    
+    .small-logo {
+        float: left;
+        display: inline-block;
+    }
+    
+    .nav-container {
+        height: 66px;
+        padding-left: 2rem;
+        padding-top: 2rem;
+        width: 100%;
+    }
+    
+    ul .news-li {
+        opacity: 0;
+    }
+    
+    ul .releases-li {
+        opacity: 0;
+    }
+    
+    ul .shop-li {
+        opacity: 0;
+    }
+    
+    ul .contact-li {
+        opacity: 0;
+    }
+ 
+}
+
+@media (min-width: 640px) and (max-width: 1430px) {
+    
+    .to-top-container {
+        display: none;
+        position: fixed;
+        margin-left: 0rem;
+        padding-left: 1.2rem;  
+        padding-top: 1rem;
+        bottom: 0; 
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 2;
+        background-color: #fd9a00;
+    }
+    
+    .to-top-button {
+        width: 100px;
+        margin-right: .9rem;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .search-input-small {
+        width: 50%;
+    }
+    
+    .magnifying-glass-two {
+        margin-top: 1px;
+        margin-left: 0px;
+    }
 }
 
 @media (min-width: 640px) and (max-width: 809px) {
@@ -1118,7 +1286,7 @@ body {
     }
     
     .overlay {
-        opacity: 1;
+        opacity: 0;
     }
     
     .show-info:hover > .overlay {
@@ -1144,9 +1312,65 @@ body {
         height: 120px; 
    
     }
-      .album-div-top {
+    
+    .album-div-top {
         padding-top: 0rem;
     }
+    
+    .release-album-info {
+        display: block;
+        font-size: 18px;    
+        text-align: center; 
+        text-decoration: none;
+        color: #000000;    
+        font-weight: 500;   
+    }
+
+    .release-album-info a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .release-album-info a:hover {
+        text-decoration: none !important;
+        color: black;
+    }
+
+    .release-album-info a:visited {
+        text-decoration: none;
+        color: black;
+    } 
+    
+   .to-top-container {
+        display: none;
+        position: fixed;
+        margin-left: 0rem;
+        padding-left: 1.2rem;  
+        padding-top: 1rem;
+        bottom: 0; 
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 2;
+        background-color: #fd9a00;
+    }
+    
+    .to-top-button {
+        width: 100px;
+        margin-right: .9rem;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .search-input-small {
+        width: 50%;
+    }
+    
+    .magnifying-glass-two {
+        margin-top: 1px;
+        margin-left: 0px;
+    }
+ 
 }
 
 @media (min-width: 325px) and (max-width: 510px) {
@@ -1184,11 +1408,17 @@ body {
     
     .album-div-top {
         padding-top: 0rem;
+        padding-left: 1.8rem;
+    }
+    
+    .album-table {
+        padding-left: 1.8rem;
     }
     
     .button-buy {
         margin-left: 25%;
     }
+
 }
 
 @media (min-width: 320px) and (max-width: 324px) {
@@ -1207,6 +1437,14 @@ body {
         width: 320px;
         margin: auto;
         font-size: 16px; 
+    }
+    
+    .newsletter-copy {
+        font-size: 20px;
+    }
+    
+    .carousel-title {
+        font-size: 22px;
     }
     
     .input {
@@ -1233,8 +1471,7 @@ body {
     }
     
     .footer .footer-style li {
-
-    font-size: 16px;
+        font-size: 16px;
 
     }
     
@@ -1243,7 +1480,7 @@ body {
     }
     
     .overlay {
-        opacity: 1;
+        opacity: 0;
     }
     
     .show-info:hover > .overlay {
@@ -1273,10 +1510,75 @@ body {
     
      .album-div-top {
         padding-top: 0rem;
+        padding-left: 1.8rem;
+    }
+    
+    .album-table {
+        padding-left: 1.8rem;
+    }
+    
+    .release-album-info {
+        display: block;
+        font-size: 18px;    
+        text-align: center; 
+        text-decoration: none;
+        color: #000000;    
+        font-weight: 500;   
+    }
+
+    .release-album-info a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .release-album-info a:hover {
+        text-decoration: none !important;
+        color: black;
+    }
+
+    .release-album-info a:visited {
+        text-decoration: none;
+        color: black;
+    } 
+    
+    .search-container {
+        margin-left: 1.2rem;
+    }
+    
+    .to-top-container {
+        display: none;
+        position: fixed;
+        margin-left: 0rem;
+        padding-left: 1.2rem;  
+        padding-top: 1rem;
+        bottom: 0; 
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 2;
+        background-color: #fd9a00;
+    }
+    
+    .to-top-button {
+        width: 100px;
+        margin-right: .9rem;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .search-input-small {
+        width: 40%;
+        font-size:16px;
+    }
+    
+    .magnifying-glass-two {
+        margin-top: 2px;
+        margin-left: 0px;
     }
     
      .button-buy {
-        margin-left: 25%;
+        margin-left: 20%;
     }
+    
 }
 /* END MEDIA QUERIES */

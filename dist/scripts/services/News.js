@@ -26,7 +26,7 @@
         */
         
         News.sendReturnNews = function(headline, copy, newsImage) {
-        
+            
         var d = new Date();
         var time = d.getTime();
             
@@ -34,9 +34,9 @@
             
         var newIndex = index +1;
             
-        if (image == undefined || '/assets/images/news/...Leave blank for default image') {
+        if (newsImage == undefined || '/assets/images/news/...Leave blank for default image') {
             
-            image = '/assets/images/news/news_default.jpg';
+            newsImage = '/assets/images/news/news_default.jpg';
         }
             
         news.$add({
@@ -44,7 +44,7 @@
             date: time,
             headline: headline,
             copy: copy,
-            image: newsIimage
+            image: newsImage
         });
             
        /* news.$add({

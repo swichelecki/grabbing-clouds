@@ -47,7 +47,6 @@ img {
     min-height: 400px;
 }*/
 
-
 .body-background {
     height: 100%;
     background: #00ff00; /* For browsers that do not support gradients */
@@ -246,6 +245,7 @@ body {
 }
 
 .large-logo {
+    display: block;
     vertical-align: top !important;
 }
 
@@ -600,7 +600,7 @@ body {
     display: none;
     position: fixed;
     bottom: 3rem; 
-    margin-left: -185px;
+    margin-left: -188px;
     width: 200px;
 }
 
@@ -727,7 +727,8 @@ body {
 .album-band {
     width: 90%;
     margin-top: .8rem;
-    position: relative;
+    float: left;
+    /*position: relative;*/
     display: inline-block;
     margin: 0;
     margin-left: 1.2rem;
@@ -736,7 +737,9 @@ body {
 }
 
 .by-artist {
-    position: relative;
+    /*position: relative;*/
+    float: left;
+    padding-top: 8px;
     margin: 0;
     margin-right: -20px;
     display: inline-block;
@@ -1170,20 +1173,20 @@ body {
         width: 100%;
     }
     
-    ul .news-li {
-        opacity: 0;
+    #news-top {
+        display: none;
     }
     
-    ul .releases-li {
-        opacity: 0;
+    #shop {
+        display: none;
     }
     
-    ul .shop-li {
-        opacity: 0;
+    #contact-top {
+        display: none;
     }
     
-    ul .contact-li {
-        opacity: 0;
+    #releases-top {
+       display: none;
     }
  
 }
@@ -1217,8 +1220,8 @@ body {
     
     .magnifying-glass-two {
         margin-top: 1px;
-        margin-left: 0px;
     }
+    
 }
 
 @media (min-width: 640px) and (max-width: 809px) {
@@ -1571,13 +1574,16 @@ body {
         font-size:16px;
     }
     
-    .magnifying-glass-two {
-        margin-top: 2px;
-        margin-left: 0px;
-    }
-    
      .button-buy {
         margin-left: 20%;
+    }
+    
+    .ion-arrow-up-a {
+        display: none;
+    }
+    
+    .search-input-small {
+        top: -2px;
     }
     
 }

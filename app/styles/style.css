@@ -1061,7 +1061,6 @@ body {
    
 }
 
-
 @media (min-width: 810px) {
     
     .album-div-left {
@@ -1140,6 +1139,10 @@ body {
         margin-top: 66px;
     }
     
+    .nav-logo {
+        display: none;
+    }
+    
     .large-logo {
         display: none;
     }
@@ -1164,6 +1167,7 @@ body {
     .small-logo {
         float: left;
         display: inline-block;
+        width: 60px;
     }
     
     .nav-container {

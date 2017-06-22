@@ -1190,12 +1190,15 @@ body {
     }
     
     #releases-top {
-       display: none;
+        display: none;
     }
     
     #hide-logo {
-       display: none;
-        
+        display: none !important;
+    }
+    
+    #hide-logo-a {
+        display: none !important;
     }
  
 }

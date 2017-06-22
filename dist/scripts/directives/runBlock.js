@@ -14,7 +14,6 @@
      * @desc DOM node objects used to enable the collapsable / responsive nav
      */
     
-    var newsColor = document.getElementById('yellow');
     var nav = document.getElementsByClassName('nav');
     var navLogo = document.getElementsByClassName('nav-logo');    
     var logo = document.getElementsByClassName('large-logo');
@@ -60,6 +59,7 @@
         shop[0].style.width = '6rem';
         contact[0].style.width = '5rem';
         logo[0].style.display = 'none'; 
+        navLogo[0].style.display = 'none'; 
         smallLogo[0].style.float = 'left';
         smallLogo[0].style.display = 'inline-block';
         navContainer[0].style.paddingLeft = 0;
@@ -142,6 +142,7 @@
        ul[0].style.display = 'none'; 
        ul[1].style.display = 'none'; 
        logo[0].style.display = 'none';
+       navLogo[0].style.display = 'none';    
        instagram[0].style.display = 'none';
        twitter[0].style.display = 'none';
        facebook[0].style.display = 'none'; 

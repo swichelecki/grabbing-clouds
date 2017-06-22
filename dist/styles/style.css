@@ -1200,6 +1200,10 @@ body {
     #hide-logo-a {
         display: none !important;
     }
+    
+    .nav .small-nav-logo .small-logo {
+        display: inline-block;
+    }
  
 }
 

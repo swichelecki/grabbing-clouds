@@ -1165,7 +1165,7 @@ body {
     }
     
     .small-logo {
-        float: left !important;
+      /*  float: left !important; */
         display: inline-block !mportant;
         width: 60px;
     }

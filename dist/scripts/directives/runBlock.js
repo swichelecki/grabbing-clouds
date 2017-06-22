@@ -60,7 +60,7 @@
         contact[0].style.width = '5rem';
         logo[0].style.display = 'none'; 
         navLogo[0].style.display = 'none'; 
-        smallLogo[0].style.float = 'left';
+       /* smallLogo[0].style.float = 'left'; */
         smallLogo[0].style.display = 'inline-block';
         navContainer[0].style.paddingLeft = 0;
         navContainer[0].style.paddingTop = '.2rem';
@@ -126,7 +126,7 @@
        news[0].style.width = null;
        shop[0].style.width = null;
        contact[0].style.width = null;    
-       marginspacer[0].style.marginTop = null;
+       marginspacer[0].style.marginTop = '0px';
        instagram[0].style.display = 'none';
        twitter[0].style.display = 'none';
        facebook[0].style.display = 'none';
@@ -152,7 +152,7 @@
        facebook[0].style.paddingTop = '.7rem';
        burger[0].style.paddingTop = '.7rem';    
        navContainer[0].style.height = '66px';   
-       smallLogo[0].style.float = 'left';
+     /*  smallLogo[0].style.float = 'left'; */
        smallLogo[0].style.display = 'inline-block';
        navContainer[0].style.paddingLeft = '.2rem';
        navContainer[0].style.paddingTop = '.2rem';

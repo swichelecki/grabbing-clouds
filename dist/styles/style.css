@@ -1136,7 +1136,7 @@ body {
     }
     
     .nav-margin-spacer {
-        margin-top: 66px;
+        margin-top: 66px !important;
     }
     
     .nav-logo {
@@ -1165,13 +1165,13 @@ body {
     }
     
     .small-logo {
-        float: left;
-        display: inline-block;
+        float: left !important;
+        display: inline-block !mportant;
         width: 60px;
     }
     
     .nav-container {
-        height: 66px;
+        height: 66px !important;
         padding-left: 2rem;
         padding-top: 2rem;
         width: 100%;

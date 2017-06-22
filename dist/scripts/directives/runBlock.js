@@ -76,6 +76,7 @@
         ul[0].style.display = 'inline-block'; 
         ul[1].style.display = 'inline-block'; 
         marginspacer[0].style.marginTop = '165px';
+        marginspacer[0].style.height = null;   /*new*/
         instagram[0].style.display = 'inline-block';
         twitter[0].style.display = 'inline-block';
         facebook[0].style.display = 'inline-block';
@@ -127,6 +128,7 @@
        shop[0].style.width = null;
        contact[0].style.width = null;    
        marginspacer[0].style.marginTop = '0px';
+       marginspacer[0].style.height = null;  /*new*/  
        instagram[0].style.display = 'none';
        twitter[0].style.display = 'none';
        facebook[0].style.display = 'none';
@@ -138,7 +140,9 @@
        nav[0].style.top = 0;
        nav[0].style.left = 0;
        nav[0].style.zIndex = 3;
-       marginspacer[0].style.marginTop = '66px';  
+       marginspacer[0].style.height = '66px'; /*new */
+      /* marginspacer[0].style.marginTop = '66px';*/
+       marginspacer[0].style.marginTop = '0px'; /* new */
        ul[0].style.display = 'none'; 
        ul[1].style.display = 'none'; 
        logo[0].style.display = 'none';

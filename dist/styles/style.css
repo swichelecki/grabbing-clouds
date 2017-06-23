@@ -1129,7 +1129,7 @@ body {
 @media (min-width: 320px) and (max-width: 990px) {
     
     .nav {
-        position: fixed;
+        position: fixed !important;
         top: 0;
         left: 0;
         z-index: 3;
@@ -1172,8 +1172,8 @@ body {
     
     .nav-container {
         height: 66px !important;
-        padding-left: 2rem;
-        padding-top: 2rem;
+        padding-left: .2rem !important;
+        padding-top: .2rem !important;
         width: 100%;
     }
     
@@ -1202,7 +1202,7 @@ body {
     }
     
     .nav .small-nav-logo .small-logo {
-        display: inline-block;
+        display: inline-block !important;
     }
  
 }

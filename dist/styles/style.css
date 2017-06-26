@@ -728,28 +728,28 @@ body {
 }
 
 .album-band {
-    width: 90%;
+    width: 80%;
     margin-top: .8rem;
     float: left;
     /*position: relative;*/
     display: inline-block;
     margin: 0;
-    margin-left: 1.2rem;
+    margin-left: 0rem;
     font-weight: 500;
-    font-size: 26px;
+    font-size: 20px;
 }
 
 .by-artist {
     /*position: relative;*/
     float: left;
-    padding-top: 1px;
-    padding-right: 8px;
+    margin-top: 0px;
+    padding-right: 0px;
     margin: 0;
-    margin-right: -20px;
+    margin-right: 5px;
     display: inline-block;
    /* position: absolute; 
     top: 90px; */
-    font-size: 1.5em;
+    font-size: 20px;
 }
  
 .song-list {
@@ -1393,6 +1393,11 @@ body {
         margin-top: 1px;
         margin-left: 0px;
     }
+    
+    .new-releases {
+        padding-top: 0rem;
+        padding-bottom: .1rem;
+    }
  
 }
 
@@ -1546,7 +1551,7 @@ body {
         text-align: center; 
         text-decoration: none;
         color: #000000;    
-        font-weight: 500;   
+        font-weight: 700;   
     }
 
     .release-album-info a {
@@ -1604,6 +1609,11 @@ body {
     
     .search-input-small {
         top: -2px;
+    }
+    
+    .new-releases {
+        padding-top: 0rem;
+        padding-bottom: .1rem;
     }
     
 }

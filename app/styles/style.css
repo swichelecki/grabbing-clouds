@@ -160,6 +160,7 @@ body {
 .nav-margin-spacer {
     position: relative;
     margin-top: 0;
+    background-color: #ff33ff;
 }
 
 /* HOVER TRANSITION */
@@ -1152,15 +1153,15 @@ body {
     }
     
     .ion-social-twitter {
-        display: none;
+        display: none !important;
     }
     
     .ion-social-facebook {
-        display: none;
+        display: none !important;
     }
     
     .ion-social-instagram {
-        display: none;
+        display: none !important;
     }
     
     .ion-navicon-round {

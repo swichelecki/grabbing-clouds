@@ -49,6 +49,8 @@
         * desc makes side widget stay on screen on input click and not on ngBlur  
         */
         
+       // var side_widget_scroll_position = 0;
+        
         var display = false;
         
         var displayTrue = function() {
@@ -58,9 +60,21 @@
         this.displayFalse = function() {
             display = false;
             
-            if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistance) {
-                hide();
-            }
+            /* if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+                
+                    console.log("call displayFalse() in Firebase");
+                    side_widget_scroll_position = window.scrollY;
+                 if (side_widget_scroll_position <= 200) {
+                    hide();
+                 }
+            
+             } else { */
+                 
+                if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistance) {
+                    hide();
+                }
+          
+            // end else  }
         };
     
         var smallInput = document.getElementById('small-input');
@@ -89,19 +103,46 @@
         
         this.onload = function() {
             
+            if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+            
+            console.log("FireFox browser on releases page"); 
+                
+         /*   window.addEventListener('scroll', function(event) {
+            side_widget_scroll_position = window.scrollY;
+            
+                if (side_widget_scroll_position >= 200) {
+                   //window.requestAnimationFrame(function() {
+                        show(); 
+                   // });
+                } else if (side_widget_scroll_position <= 200 && display == false) {
+                   // window.requestAnimationFrame(function() {
+                        hide(); 
+                    //});
+                }
+            }); 
+                  
+            smallInput.addEventListener('click', function(event) {
+                    displayTrue();
+            }); */
+            
+            } else { 
+            
             window.addEventListener('scroll', function(event) {
                 
                 if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance) {
                     show();
                 } else if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistance && display == false) {
                     hide();
-                } 
+               
+             } 
                 
             });
             
             smallInput.addEventListener('click', function(event) {
                 displayTrue();
             });
+            
+           }
             
         }; 
     }

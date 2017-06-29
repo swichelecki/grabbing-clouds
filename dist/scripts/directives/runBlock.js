@@ -60,7 +60,6 @@
         contact[0].style.width = '5rem';
         logo[0].style.display = 'none'; 
         navLogo[0].style.display = 'none'; 
-       /* smallLogo[0].style.float = 'left'; */
         smallLogo[0].style.display = 'inline-block';
         navContainer[0].style.paddingLeft = 0;
         navContainer[0].style.paddingTop = '.2rem';
@@ -76,7 +75,7 @@
         ul[0].style.display = 'inline-block'; 
         ul[1].style.display = 'inline-block'; 
         marginspacer[0].style.marginTop = '165px';
-        marginspacer[0].style.height = null;   /*new*/
+        marginspacer[0].style.height = null;
         instagram[0].style.display = 'inline-block';
         twitter[0].style.display = 'inline-block';
         facebook[0].style.display = 'inline-block';
@@ -128,41 +127,13 @@
        shop[0].style.width = null;
        contact[0].style.width = null;    
        marginspacer[0].style.marginTop = '0px';
-       marginspacer[0].style.height = null;  /*new*/  
+       marginspacer[0].style.height = null;  
        instagram[0].style.display = 'none';
        twitter[0].style.display = 'none';
        facebook[0].style.display = 'none';
        burger[0].style.display = null; 
-    };  
-        
-    var responsiveWidth = function() {  
-       nav[0].style.position = 'fixed';
-       nav[0].style.top = 0;
-       nav[0].style.left = 0;
-       nav[0].style.zIndex = 3;
-       marginspacer[0].style.height = '66px'; /*new */
-      /* marginspacer[0].style.marginTop = '66px';*/
-       marginspacer[0].style.marginTop = '0px'; /* new */
-       ul[0].style.display = 'none'; 
-       ul[1].style.display = 'none'; 
-       logo[0].style.display = 'none';
-       navLogo[0].style.display = 'none';    
-       instagram[0].style.display = 'none';
-       twitter[0].style.display = 'none';
-       facebook[0].style.display = 'none'; 
-       burger[0].style.display = 'inline-block';    
-       instagram[0].style.paddingTop = '.7rem';
-       twitter[0].style.paddingTop = '.7rem';
-       facebook[0].style.paddingTop = '.7rem';
-       burger[0].style.paddingTop = '.7rem';    
-       navContainer[0].style.height = '66px';   
-     /*  smallLogo[0].style.float = 'left'; */
-       smallLogo[0].style.display = 'inline-block';
-       navContainer[0].style.paddingLeft = '.2rem';
-       navContainer[0].style.paddingTop = '.2rem';
-       navContainer[0].style.width = '100%'; 
     }; 
-      
+        
     /*
      * @desc function used to enable nav $anchorScroll
      */
@@ -176,52 +147,59 @@
             $location.hash(null);
         };
         
+    
+    /*
+     * @desc if/else conditional used to enable collapsable nav
+     * if = FireFox / else = all other browsers 
+     */    
         
     window.onload = function() {
         
-       /*
-        * @desc getBoundingClientRect() objects and event listeners used to enable collapsable / responsive nav
-        */
+         if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+            
+            console.log("FireFox browser"); 
+       
+          /*  var last_known_scroll_position = 0;
+             
+            var client_width = 0;
+             
+            window.addEventListener('scroll', function(event) {
+                last_known_scroll_position = window.scrollY;
+                client_width = window.scrollX;
+            
+                if (last_known_scroll_position >= 99) {
+                        collapsedNav();
+                } else if (last_known_scroll_position <= 99) {
+                        fullNav();
+                } else if (last_known_scroll_position >= 99 && client_width <= 990) {
+                        collapsedNav();
+                }
+            });
+             
+            body.css({'background-color' : '#ff33ff'});
+            body.css({'z-index' : -100}); */
+             
+         } else { 
+             
+            var nav = document.getElementsByClassName('nav')[0];
+            var scrollDistance = nav.getBoundingClientRect().bottom - 66; 
+            var scrollDistanceVeryTop = nav.getBoundingClientRect().top; 
         
-        var nav = document.getElementsByClassName('nav')[0];
-        var scrollDistance = nav.getBoundingClientRect().bottom - 66;
-        var scrollDistanceTop = nav.getBoundingClientRect().bottom - 66;
-        var scrollDistanceVeryTop = nav.getBoundingClientRect().top;
-        
-        // IMPORTANT - ensures responsiveWidth() fires if page loads on mobile 
-        
-        if (document.documentElement.clientWidth <= 990) {
-                console.log('if statement for mobile load called');    
-                responsiveWidth();
-            } 
-        
-        window.addEventListener('scroll', function(event) {
+            window.addEventListener('scroll', function(event) {
             
             if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistanceVeryTop && document.documentElement.clientWidth <= 990) {
-                console.log('resonsiveWidth called in scroll event listener');
-                responsiveWidth();
+                console.log('resonsive width css; collapsedNav() and fullNav() prevented from firing');
             } else if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance) {
                 console.log('collapsedNav called in scroll event listener');
                 collapsedNav();
-            } else if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistanceTop) {
+            } else if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistance) {
                 fullNav();
                 console.log('fullNav called in scroll event listener');
             } 
-        });
-        
-        window.addEventListener('resize', function(event) {
-                  
-            if (document.documentElement.clientWidth <= 990) {
-                console.log('responsiveWidth() called');
-                responsiveWidth();
-            } else if (document.documentElement.clientWidth >= 990 && document.documentElement.scrollTop || document.body.scrollTop <= scrollDistance) {
-                console.log('sets full nav back if less than scrollDistance');
-                fullNav();
-            } else if (document.documentElement.clientWidth <= 990 && document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance) {
-                console.log('keep collaped nav past scrollDistance');
-                collapsedNav();
-            }
-        });
+                
+            });
+             
+        }
         
        /*
         * @desc event listener used to enable $anchorScroll

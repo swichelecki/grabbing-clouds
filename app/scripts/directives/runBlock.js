@@ -9,11 +9,10 @@
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
     }); 
-                
+        
     /*
      * @desc DOM node objects used to enable the collapsable / responsive nav
      */
-    
     var nav = document.getElementsByClassName('nav');
     var navLogo = document.getElementsByClassName('nav-logo');    
     var logo = document.getElementsByClassName('large-logo');
@@ -44,6 +43,8 @@
      */
         
     var collapsedNav = function() {
+        marginspacer[0].style.marginTop = '165px';
+        marginspacer[0].style.height = null;
         nav[0].style.position = 'fixed';
         nav[0].style.top = 0;
         nav[0].style.left = 0;
@@ -74,8 +75,6 @@
         ul[1].style.paddingTop = '1.2rem';
         ul[0].style.display = 'inline-block'; 
         ul[1].style.display = 'inline-block'; 
-        marginspacer[0].style.marginTop = '165px';
-        marginspacer[0].style.height = null;
         instagram[0].style.display = 'inline-block';
         twitter[0].style.display = 'inline-block';
         facebook[0].style.display = 'inline-block';
@@ -86,6 +85,8 @@
     };   
         
     var fullNav = function() {
+       marginspacer[0].style.marginTop = '0px';
+       marginspacer[0].style.height = null;  
        nav[0].style.position = 'relative';
        nav[0].style.top = null;
        nav[0].style.left = null;
@@ -126,12 +127,10 @@
        news[0].style.width = null;
        shop[0].style.width = null;
        contact[0].style.width = null;    
-       marginspacer[0].style.marginTop = '0px';
-       marginspacer[0].style.height = null;  
        instagram[0].style.display = 'none';
        twitter[0].style.display = 'none';
        facebook[0].style.display = 'none';
-       burger[0].style.display = null; 
+       burger[0].style.display = null;
     }; 
         
     /*
@@ -158,33 +157,70 @@
          if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
             
             console.log("FireFox browser"); 
-       
-          /*  var last_known_scroll_position = 0;
              
+            var last_known_scroll_position = 0;
             var client_width = 0;
-             
+            var offset = window.scrollY + 99;
+            var fire = null; 
+            console.log(fire);
+              
             window.addEventListener('scroll', function(event) {
-                last_known_scroll_position = window.scrollY;
-                client_width = window.scrollX;
-            
-                if (last_known_scroll_position >= 99) {
-                        collapsedNav();
-                } else if (last_known_scroll_position <= 99) {
-                        fullNav();
-                } else if (last_known_scroll_position >= 99 && client_width <= 990) {
-                        collapsedNav();
+                
+                last_known_scroll_position = document.documentElement.scrollTop || document.body.scrollTop;
+                client_width = window.innerWidth;
+                
+                if (last_known_scroll_position >= offset && fire == null) {
+                    fire = true;
+                    console.log(fire);
                 }
+                
+                if (client_width <= 990) {
+                        console.log('resonsive width css; collapsedNav() and fullNav() prevented from firing');
+                } else if (last_known_scroll_position >= offset && fire == true) {
+                        console.log('collapsedNav() called');
+                        collapsedNav();
+                        fire = false;
+                } else if (last_known_scroll_position <= offset && fire == false) {
+                        console.log('fullNav() called');
+                        fullNav();
+                        fire = null;
+                }
+                
             });
-             
-            body.css({'background-color' : '#ff33ff'});
-            body.css({'z-index' : -100}); */
              
          } else { 
              
             var nav = document.getElementsByClassName('nav')[0];
             var scrollDistance = nav.getBoundingClientRect().bottom - 66; 
-            var scrollDistanceVeryTop = nav.getBoundingClientRect().top; 
+            var scrollDistanceVeryTop = nav.getBoundingClientRect().top;
         
+            var fire = null; 
+            console.log(fire);
+    
+            window.addEventListener('scroll', function(event) {
+            if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance && fire == null) {
+                fire = true;
+                console.log(fire);
+            }
+                
+            if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistanceVeryTop && document.documentElement.clientWidth <= 990) {
+                console.log('resonsive width css; collapsedNav() and fullNav() prevented from firing');
+            } else if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance && fire == true) {
+                collapsedNav();
+                fire = false;
+                console.log(fire);
+                console.log('collapsedNav() fired');
+            } else if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistance && fire == false) {
+                fullNav();
+                fire = null;
+                console.log('fullNav() fired ');
+            }
+            });
+        
+          /*  var nav = document.getElementsByClassName('nav')[0];
+            var scrollDistance = nav.getBoundingClientRect().bottom - 66; 
+            var scrollDistanceVeryTop = nav.getBoundingClientRect().top; 
+    
             window.addEventListener('scroll', function(event) {
             
             if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistanceVeryTop && document.documentElement.clientWidth <= 990) {
@@ -197,9 +233,9 @@
                 console.log('fullNav called in scroll event listener');
             } 
                 
-            });
+            }); */
              
-        }
+      }
         
        /*
         * @desc event listener used to enable $anchorScroll

@@ -160,6 +160,7 @@ body {
 .nav-margin-spacer {
     position: relative;
     margin-top: 0;
+    
 }
 
 /* HOVER TRANSITION */
@@ -227,6 +228,7 @@ body {
     background-color: #ff33ff;
     width: 100%;
     font-weight: 700;
+    -moz-transform: rotate(0.02deg);
 }
 
 .nav-container {
@@ -239,11 +241,11 @@ body {
 
  .nav .nav-logo {
    display: inline-block;
-   margin: 0 !important;      
+   margin: 0 !important;
 }
 
 .nav .small-nav-logo {
-    float: left; 
+    float: left;
 }
 
 .large-logo {
@@ -605,6 +607,7 @@ body {
     bottom: 3rem; 
     margin-left: -188px;
     width: 200px;
+    -moz-transform: rotate(0.02deg);
 }
 
 .search-input-small {
@@ -1207,6 +1210,14 @@ body {
     
     .nav .small-nav-logo .small-logo {
         display: inline-block !important;
+    }
+    
+    #ul-one {
+        display: none;
+    }
+    
+    #ul-two {
+        display: none;
     }
  
 }

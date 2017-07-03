@@ -49,7 +49,7 @@
         * desc makes side widget stay on screen on input click and not on ngBlur  
         */
         
-       // var side_widget_scroll_position = 0;
+        var side_widget_scroll_position = 0;
         
         var display = false;
         
@@ -60,7 +60,7 @@
         this.displayFalse = function() {
             display = false;
             
-            /* if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+           /*  if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
                 
                     console.log("call displayFalse() in Firebase");
                     side_widget_scroll_position = window.scrollY;
@@ -72,9 +72,9 @@
                  
                 if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistance) {
                     hide();
-                }
+             //end else   }
           
-            // end else  }
+            }
         };
     
         var smallInput = document.getElementById('small-input');
@@ -107,7 +107,7 @@
             
             console.log("FireFox browser on releases page"); 
                 
-         /*   window.addEventListener('scroll', function(event) {
+          /*  window.addEventListener('scroll', function(event) {
             side_widget_scroll_position = window.scrollY;
             
                 if (side_widget_scroll_position >= 200) {

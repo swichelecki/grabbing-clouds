@@ -42,7 +42,7 @@
 <section class="carousel">
     <div uib-carousel active="active" interval="landing.myInterval" no-wrap="false" no-pause="true">
         <div uib-slide ng-repeat="slide in landing.slides track by slide.id" index="slide.id">
-                <a ui-sref="album({data:slide.index})">
+                <a ui-sref="album({data:slide.url})">
                 <img ng-src="{{slide.image}}" style="margin:auto;">
                 <div class="carousel-caption">
                     <h1 class="carousel-title">{{slide.title}}</h1>
@@ -69,7 +69,7 @@
     <section class="container clearfix">
        <h1 class="new-releases">Latest Releases</h1>
         <div ng-repeat="album in landing.albums | orderBy:'index':reverse=true" class="left-div column half">
-            <a ui-sref="album({data:album.index})" class="anchor">
+            <a ui-sref="album({data:album.url})" class="anchor">
                         <img ng-src="{{album.image}}" class="left-div-image">
                     <h3 class="band-name">{{album.both}}</h3>
                     <p class="buy-listen">Listen / buy</p>

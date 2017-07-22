@@ -47,14 +47,6 @@
             image: newsImage
         });
             
-       /* news.$add({
-            index: 4,    
-            date: time,
-            headline: 'Headline Lorem ipsum',    
-            copy: 'Index 4. Top. Lorem ipsum dolor sit amet, tristique nec sed sed enim wisi placerat, quis lorem diam vel, turpis at luctus. Eget non. Volutpat etiam rutrum nec diam et. Justo parturient, cupiditate quis, habitasse feugiat metus non nihil. Lorem ipsum dolor sit amet, tristique nec sed sed enim wisi placerat, quis lorem diam vel, turpis at luctus. Eget non. Volutpat etiam rutrum nec diam et. Justo parturient, cupiditate quis, habitasse feugiat metus non nihil. Volutpat etiam rutrum nec diam et. Justo parturient, cupiditate quis, habitasse feugiat metus non nihil.',
-            image: '/assets/images/news_default.jpg'
-            }); */
-            
         }; 
         
         /*
@@ -66,7 +58,6 @@
                 News.deleteNews(newsItem); 
             }
         };
-        
         
         /*
          * @desc deletes news object from news array

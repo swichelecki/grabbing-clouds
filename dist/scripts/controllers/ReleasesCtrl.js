@@ -1,5 +1,5 @@
 (function() {
-    function ReleasesCtrl(Fixtures, Albums, $anchorScroll, $location) {
+    function ReleasesCtrl(Albums, $anchorScroll, $location) {
         
        /*
         * @desc ensures page loads at top of page 
@@ -149,5 +149,5 @@
     
     angular
         .module('grabbing-clouds')
-        .controller('ReleasesCtrl', ['Fixtures', 'Albums', '$anchorScroll', '$location', ReleasesCtrl]);
+        .controller('ReleasesCtrl', ['Albums', '$anchorScroll', '$location', ReleasesCtrl]);
 })();

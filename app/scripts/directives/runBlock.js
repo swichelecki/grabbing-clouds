@@ -144,8 +144,7 @@
             $anchorScroll();
             
             $location.hash(null);
-        };
-        
+        };   
     
     /*
      * @desc if/else conditional used to enable collapsable nav
@@ -163,12 +162,12 @@
             var offset = window.scrollY + 99;
             var fire = null; 
             console.log(fire);
-              
+    
             window.addEventListener('scroll', function(event) {
                 
                 last_known_scroll_position = document.documentElement.scrollTop || document.body.scrollTop;
-                client_width = window.innerWidth;
-                
+                client_width = window.innerWidth;        
+        
                 if (last_known_scroll_position >= offset && fire == null) {
                     fire = true;
                     console.log(fire);
@@ -216,24 +215,6 @@
                 console.log('fullNav() fired ');
             }
             });
-        
-          /*  var nav = document.getElementsByClassName('nav')[0];
-            var scrollDistance = nav.getBoundingClientRect().bottom - 66; 
-            var scrollDistanceVeryTop = nav.getBoundingClientRect().top; 
-    
-            window.addEventListener('scroll', function(event) {
-            
-            if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistanceVeryTop && document.documentElement.clientWidth <= 990) {
-                console.log('resonsive width css; collapsedNav() and fullNav() prevented from firing');
-            } else if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance) {
-                console.log('collapsedNav called in scroll event listener');
-                collapsedNav();
-            } else if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistance) {
-                fullNav();
-                console.log('fullNav called in scroll event listener');
-            } 
-                
-            }); */
              
       }
         

@@ -1,5 +1,5 @@
 (function() {
-    function NewsCtrl($anchorScroll, $location, Fixtures, News) {
+    function NewsCtrl($anchorScroll, $location, News) {
                
        /*
         * @desc ensures page loads at top of page 
@@ -61,5 +61,5 @@
     
     angular
         .module('grabbing-clouds')
-        .controller('NewsCtrl', ['$anchorScroll', '$location', 'Fixtures', 'News', NewsCtrl]);
+        .controller('NewsCtrl', ['$anchorScroll', '$location', 'News', NewsCtrl]);
 })();

@@ -25,7 +25,7 @@
          * @desc sends object data to firebase.
          */
         
-        Albums.addAlbum = function(image, band, title, both, buy, info, bottom, iframe, songOne, songTwo, songThree, songFour, songFive, songSix, songSeven, songEight, songNine, songTen, songEleven, songTwelve, songThirteen, songFourteen, songFifteen, songSixteen, songSeventeen, songEighteen, songNineteen, songTwenty) {      
+        Albums.addAlbum = function(image, band, title, both, url, buy, info, bottom, iframe, songOne, songTwo, songThree, songFour, songFive, songSix, songSeven, songEight, songNine, songTen, songEleven, songTwelve, songThirteen, songFourteen, songFifteen, songSixteen, songSeventeen, songEighteen, songNineteen, songTwenty) {      
             
         var albumIndex = albums.length - 1;  
             
@@ -119,25 +119,13 @@
             band: band,
             title: title,
             both: both,
+            url: url,
             buy: buy,
             songs: arraySongs,
             info: info,
             bottom: bottom,
             bandcamp: iframe
         });  
-            
-        /*albums.$add({
-            index: 4,
-            image: 'https://firebasestorage.googleapis.com/v0/b/grabbing-clouds.appspot.com/o/grab43.jpg?alt=media&token=f5a2d33e-3daa-475c-a1b9-542ed9ac8555',
-            band: 'Shawnthony Calypso',
-            title: 'A Whale of a Tale',
-            both: 'Shawnthony Calypso - A Whale of a Tale',
-            listen: 'https://bandcamp.com/',
-            buy: 'https://bandcamp.com/',       
-            songs: ['All Alone', 'Behind the Tree', 'Front Porch Chair', "Just Couldn't get it right", "Don't Blame All of the Good Times", "Devil's Rock (pt. 1)", 'Jesus was a Big Handsaw', 'Thanks for the Memories', 'Ceramic Hammock', 'A Couple of Bottles', 'When will It End', "Don't Hang Your Head in Shame", 'I Want to Leave', 'Spin Around', 'Hourglass', 'End of Another Day'],
-            info: 'This is index 4. Lorem ipsum dolor sit amet, tristique nec sed sed enim wisi placerat, quis lorem diam vel, turpis at luctus. Eget non. Volutpat etiam rutrum nec diam et. Justo parturient, cupiditate quis, habitasse feugiat metus non nihil. Tellus urna congue curabitur a, ut vel justo donec maecenas commodo hendrerit, faucibus massa accumsan, nec in ut eleifend.',    
-            bottom: '/assets/images/album_bottom/bottom_acidaowl.jpg'
-        });*/
             
         };
         
@@ -161,17 +149,22 @@
         };
         
         /*
-         * @desc uses index from param to return album data to AlbumCtl
+         * @desc uses url from param to return album data to AlbumCtl
          */
         
-        Albums.sentIndex = function(albumIndex) {
+        Albums.sentIndex = function(albumUrl) {
             
-                var albumObject = null;
-            
-                albumObject = albums[albumIndex];
-            
-                return albumObject;      
-        }; 
+            for (var i = 0; i < albums.length; i++ ) {
+                
+                var selectedAlbum = albums[i].url;
+                
+                if (selectedAlbum == albumUrl){
+                    
+                    return albums[i];
+                    break;
+                }      
+            }   
+        };
         
         /*
          * @desc puts data array in object and sends last two album indexes to homeAlbums();
@@ -220,7 +213,6 @@
                 for (var i = 0; i < albumsTwo.length; i++) {
                     
                     twoAlbums.push(albumsTwo[i]);
-                    //console.log('albums[i]', albums[i]);
                 }   
             
                 return twoAlbums;

@@ -1,5 +1,5 @@
 (function() {
-    function AlbumCtrl(Fixtures, $stateParams, $anchorScroll, $location, $state, Albums) {
+    function AlbumCtrl($stateParams, $anchorScroll, $location, $state, Albums) {
         
         /*
         * @desc ensures page loads at top of page 
@@ -23,29 +23,19 @@
         *@desc uses index from param to access data from fixtures.js
         */
         
-        var albumIndex = $stateParams.data;
-        
-        console.log('albumIndex in AlbumCtrl', albumIndex);
-    
-        /*
-        *@desc uses index from param to access data from fixtures.js
-        */
-        
-       // this.album = Fixtures.sentIndex(albumIndex); 
+        var albumUrl = $stateParams.data;
         
         /*
         *@desc uses index from url parameter to access data from firebase
         */
         
-        this.album = Albums.sentIndex(albumIndex);
-              
-        console.log('in CTL object returned to template', this.album);
+        this.album = Albums.sentIndex(albumUrl);
         
         /*
         *@desc the three lines below bring the bandcamp iframe url from database to html
         */
         
-        var url = Albums.sentIndex(albumIndex);
+        var url = Albums.sentIndex(albumUrl);
         
         var bandurl = url.bandcamp;
         
@@ -55,5 +45,5 @@
     
     angular
         .module('grabbing-clouds')
-        .controller('AlbumCtrl', ['Fixtures', '$stateParams', '$anchorScroll', '$location', '$state', 'Albums', AlbumCtrl]);
+        .controller('AlbumCtrl', ['$stateParams', '$anchorScroll', '$location', '$state', 'Albums', AlbumCtrl]);
 })();

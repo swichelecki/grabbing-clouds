@@ -11,6 +11,8 @@
                     <input type="text" class="admin-input" ng-model="title" ng-init="title='album title'"><br>
                     <p class="admin-p">both</p> 
                     <input type="text" class="admin-input" ng-model="both" ng-init="both='band name - album title'"><br>
+                    <p class="admin-p">url</p> 
+                    <input type="text" class="admin-input" ng-model="url" ng-init="url='band-name-album-title'"><br>
                     <p class="admin-p">iframe</p> 
                     <input type="text" class="admin-input" ng-model="iframe" ng-init="iframe='iframe url'"><br>
                     <p class="admin-p">buy</p> 
@@ -59,7 +61,7 @@
                     <input type="text" class="admin-input" ng-model="songNineteen"><br>
                     <p class="admin-p">song 20</p> 
                     <input type="text" class="admin-input" ng-model="songTwenty">
-                    <button class="admin-button" ng-click="admin.albums.addAlbum(image, band, title, both, buy, info, bottom, iframe, songOne, songTwo, songThree, songFour, songFive, songSix, songSeven, songEight, songNine, songTen, songEleven, songTwelve, songThirteen, songFourteen, songFifteen, songSixteen, songSeventeen, songEighteen, songNineteen, songTwenty)">Add Album</button>
+                    <button class="admin-button" ng-click="admin.albums.addAlbum(image, band, title, both, url, buy, info, bottom, iframe, songOne, songTwo, songThree, songFour, songFive, songSix, songSeven, songEight, songNine, songTen, songEleven, songTwelve, songThirteen, songFourteen, songFifteen, songSixteen, songSeventeen, songEighteen, songNineteen, songTwenty)">Add Album</button>
                 </div>
                 <h1 class="admin-h1">Delete Album</h1>
                 <div class="delete-admin" ng-repeat="album in admin.albums.albums | orderBy:'index':reverse=true">
@@ -97,6 +99,8 @@
                     <input type="text" class="admin-input" ng-model="carTitle"><br>
                     <p class="admin-p">copy</p> 
                     <input type="text" class="admin-input" ng-model="carText"><br>
+                    <p class="admin-p">url</p>
+                    <input type="text" class="admin-input" ng-model="carUrl"><br>
                     <p class="admin-p">image</p> 
                     <input type="text" class="admin-input" ng-model="carImage" ng-init="carImage='/assets/images/carousel/'"><br>
                     <p class="admin-p">album</p>

@@ -25,11 +25,9 @@
          * @desc sends object data to firebase
          */
         
-        Carousel.addCarousel = function(carTitle, carText, carImage, carIndex) {
+        Carousel.addCarousel = function(carTitle, carText, carImage, carIndex, carUrl) {
         
-        /*NOTE: id refers to each carousel object's index in the array
-                index refers to the album index used to generate url
-         */
+        //NOTE: id refers to each carousel object's index in the array
             
         var id = carousel.length -1;
             
@@ -41,16 +39,8 @@
                 text: carText,
                 id: newId,
                 index: carIndex,
+                url: carUrl
             });    
-            
-        /*carousel.$add({
-                image: '/assets/images/photo-name.jpg',
-                title: 'Shawnthony Calypso out now',
-                text: 'Blue tapes. A dog in a pile of hay. AND a praying mantis. This record has to rule.',
-                id: 1,
-                index: 4,
-                url: 'album/$stateParams.data' 
-            });*/
             
         };
         

@@ -38,15 +38,6 @@ img {
     padding-right: 0 !important;
 }
 
-/*.body-background {
-    background-color: #f0f0f0; 
-    background: #a7ce02;
-    background-image: url('/assets/images/gradient_clear.png');
-    background-repeat: repeat-x;
-    position: relative;
-    min-height: 400px;
-}*/
-
 .body-background {
     height: 100%;
     background: #00ff00; /* For browsers that do not support gradients */
@@ -94,7 +85,6 @@ img {
     text-align: center;
     font-size: 30px;
     font-weight: 500;
-    /*text-transform: uppercase;*/
 }
 
 .anchor {
@@ -151,7 +141,6 @@ img {
 } 
 
 body {
-   /* background-color: #ff33ff; */
    font-family: 'Work Sans', sans-serif;
    font-weight: 400;
    color: #000000;    
@@ -203,7 +192,6 @@ body {
     width: 100%;
     height: 100% height:auto;
     display: block;
-    /*background: rgba(255, 255, 255, 0.4);*/
     background: rgba(34, 34, 34, 0.4);
 }
 
@@ -233,7 +221,6 @@ body {
 
 .nav-container {
     position: relative;
-    /*padding-left: 8%;*/
     padding-top: .5rem;
     font-weight: bolder;
     text-align: center;
@@ -335,7 +322,6 @@ body {
 .ion-social-facebook {
     position: absolute;
     top: 0rem;
-    /* right: 10rem; original*/
     right: 10.6rem;
     font-size: 35px;
     color: black;
@@ -379,12 +365,10 @@ body {
 
 .carousel-title {
     font-weight: 700;
-   /* font-size: 36px; */
 }
 
 .carousel-text {
     font-weight: 400;
-   /* font-size: 30px; */
     display: none;
 }
 
@@ -443,7 +427,6 @@ body {
     border: 1px solid white;
     height: 2rem;
     font-size: 18px;
-    /*color: #dedede;*/
     color: #999;
 }
 
@@ -481,7 +464,6 @@ body {
 
 .footer {
     position: relative;
-   /* padding-left: 15%; */
     padding-top: 4rem;
     padding-bottom: 2.5rem;
     text-align: center;
@@ -531,7 +513,6 @@ body {
 }
 
 .copyright {
-    /*padding-left: 25%;*/
     margin-top: .5rem;
     padding-bottom: .5rem;
     text-align: center;
@@ -611,7 +592,6 @@ body {
 }
 
 .search-input-small {
-    /*width: 82%;*/
     width: 160px;
     position: relative;
     display: inline-block;
@@ -750,8 +730,6 @@ body {
     margin: 0;
     margin-right: 5px;
     display: inline-block;
-   /* position: absolute; 
-    top: 90px; */
     font-size: 20px;
 }
  
@@ -779,7 +757,6 @@ body {
     clear: both;
     padding: 1.8rem;
     margin-top: .2rem;
-    /*margin-bottom: 1rem;*/
     margin-bottom: 0;
     font-weight: 400;
     font-size: 16px;
@@ -789,7 +766,6 @@ body {
     position: relative;
     display: block;
     text-align: center;
-    /*padding-left: 1.8rem;*/
     padding-left: 0;
 }
 
@@ -811,7 +787,6 @@ body {
    /* float: left; */
    /* width: 60%; */
     padding-top: 2rem;   
-  /*  padding: 2rem 2rem; */
 }
 
 .news-date {
@@ -847,7 +822,6 @@ body {
    /* width: 40%; */
     padding-top: 2rem;
     width: 100%;
- /*   padding-left: 2rem; */
 }
 
 .news-image-image {
@@ -860,10 +834,8 @@ body {
    /* float: left; */
     clear: both;
     min-height 5px;
-   /* width: 90%; */
     padding-top: 1.5rem;
     padding-bottom: .5rem;
-    /*padding: .5rem;*/
     margin: 0% 5%;
     border-bottom: 1.5px solid #000000;
 }
@@ -1172,7 +1144,6 @@ body {
     }
     
     .small-logo {
-      /*  float: left !important; */
         display: inline-block !mportant;
         width: 60px;
     }
@@ -1270,9 +1241,7 @@ body {
         border: 0; 
         width: 90%; 
         height: 120px; 
-   
     }
-
 }
 
 @media (min-width: 640px) {
@@ -1490,17 +1459,12 @@ body {
         width: 220px;
     }
     
-    .footer-home {
-      /*  margin-left: 5%; */
-    }
-    
     .footer-releases {
          border-right:none !important;
     }
     
     .footer-shop {
         clear: left;
-        /* margin-left: 20%; */
         margin-left: 17%;
         margin-top: .5rem;    
     }

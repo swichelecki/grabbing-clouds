@@ -46,7 +46,7 @@
             <span class="magnifying-glass ion-android-search"></span>
         </div> 
         <div ng-repeat="album in releases.albums.albums | orderBy:'index':reverse=true | filter:searchBox" class="release-div column half">
-            <a ui-sref="album({data:album.index})" class="anchor">
+             <a ui-sref="album({data:album.url})" class="anchor">
                 <div class="show-info">    
                     <img ng-src="{{album.image}}" class="left-div-image">
                     <div class="overlay">

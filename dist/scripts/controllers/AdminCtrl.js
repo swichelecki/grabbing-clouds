@@ -2,6 +2,30 @@
     function AdminCtrl(Albums, News, Carousel, $scope, $state) {
         
        /*
+        * @desc array for FireBase news image
+        */
+        
+        var newsImageArray = [];
+        
+       /*
+        * @desc array for FireBase album cover upload
+        */
+        
+        var newArray = [];
+        
+       /*
+        * @desc array for FireBase album bottom photo upload
+        */
+        
+        var bottomPhoto = [];
+        
+       /*
+        * @desc array for FireBase carousel photo upload
+        */
+        
+        var carouselPhoto = [];
+        
+       /*
         * @desc Firebase log in and log out 
         */
         
@@ -50,30 +74,6 @@
             }
             
         });
-        
-       /*
-        * @desc array for FireBase news image
-        */
-        
-        var newsImageArray = [];
-        
-       /*
-        * @desc array for FireBase album cover upload
-        */
-        
-        var newArray = [];
-        
-       /*
-        * @desc array for FireBase album bottom photo upload
-        */
-        
-        var bottomPhoto = [];
-        
-       /*
-        * @desc array for FireBase carousel photo upload
-        */
-        
-        var carouselPhoto = [];
         
        /*
         * @desc returns album data to template from Album service

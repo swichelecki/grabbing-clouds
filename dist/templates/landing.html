@@ -58,10 +58,12 @@
             <h2 class="newsletter-copy">Sign up for the newsletter:</h2>
         </div>
         <div class="email-div-right">
-            <input type="text" class="input" ng-model="emailAddress" placeholder="your email address" onfocus="this.placeholder=''" onblur="placeholder='your email address'">
-            <button class="add-email" type="submit" name="submit" ng-click="landing.newEmail.addEmail(emailAddress)">
-		      <span class="ion-ios-arrow-forward"></span>
-            </button>
+            <form name="newsletterForm" ng-submit="clearForm(emailAddress)">
+                <input type="text" class="input" ng-model="emailAddress" placeholder="your email address" onfocus="this.placeholder=''" onblur="placeholder='your email address'">
+                <button class="add-email" type="submit" name="submit" ng-click="landing.newEmail.addEmail(emailAddress)">
+		          <span class="ion-ios-arrow-forward"></span>
+                </button>
+            </form>    
         </div>
     </section>
 </section>

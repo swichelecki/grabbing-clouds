@@ -25,7 +25,7 @@
          * @desc sends object data to firebase.
          */
         
-        Albums.addAlbum = function(image, band, title, both, url, buy, info, bottom, iframe, songOne, songTwo, songThree, songFour, songFive, songSix, songSeven, songEight, songNine, songTen, songEleven, songTwelve, songThirteen, songFourteen, songFifteen, songSixteen, songSeventeen, songEighteen, songNineteen, songTwenty) {      
+        Albums.addAlbum = function(albumCover, band, title, both, url, buy, info, bottom, iframe, songOne, songTwo, songThree, songFour, songFive, songSix, songSeven, songEight, songNine, songTen, songEleven, songTwelve, songThirteen, songFourteen, songFifteen, songSixteen, songSeventeen, songEighteen, songNineteen, songTwenty) {        
             
         var albumIndex = albums.length - 1;  
             
@@ -115,7 +115,7 @@
                            
         albums.$add({
             index: albumNewIndex,
-            image: image,
+            image: albumCover,
             band: band,
             title: title,
             both: both,

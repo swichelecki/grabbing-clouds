@@ -1,6 +1,6 @@
 (function() {
     function ReleasesCtrl(Albums, $anchorScroll, $location) {
-        
+         
        /*
         * @desc ensures page loads at top of page 
         */
@@ -60,20 +60,19 @@
         this.displayFalse = function() {
             display = false;
             
-           /*  if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+             if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
                 
                     console.log("call displayFalse() in Firebase");
                     side_widget_scroll_position = window.scrollY;
                  if (side_widget_scroll_position <= 200) {
-                    hide();
+                     hide();
                  }
             
-             } else { */
+             } else { 
                  
                 if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistance) {
                     hide();
-             //end else   }
-          
+                }
             }
         };
     
@@ -83,18 +82,21 @@
         * desc makes side widget appear and disappear on scroll
         */
         
-        var toTopId = angular.element(document.getElementById('to-top'));
+       // var toTopId = angular.element(document.getElementById('to-top'));
+       // var toTopId = document.getElementById('to-top');
         var toTopWidget = document.getElementsByClassName('to-top-container')[0];
         var scrollDistance = toTopWidget.getBoundingClientRect().top + 200;
        
         var show = function() {
-            
-            toTopId.css({'display' : 'block'});
+            toTopWidget.style.display = 'block';
+            //toTopId.css({'display' : 'block'});
             
         };
         
         var hide = function() {
-            toTopId.css({'display' : 'none'});
+            toTopWidget.style.display = 'none';
+            //toTopId.css({'display' : 'none'});
+           
         };
         
        /*
@@ -107,23 +109,19 @@
             
             console.log("FireFox browser on releases page"); 
                 
-          /*  window.addEventListener('scroll', function(event) {
+            window.addEventListener('scroll', function(event) {
             side_widget_scroll_position = window.scrollY;
             
                 if (side_widget_scroll_position >= 200) {
-                   //window.requestAnimationFrame(function() {
-                        show(); 
-                   // });
+                    show(); 
                 } else if (side_widget_scroll_position <= 200 && display == false) {
-                   // window.requestAnimationFrame(function() {
-                        hide(); 
-                    //});
+                    hide();
                 }
             }); 
                   
             smallInput.addEventListener('click', function(event) {
                     displayTrue();
-            }); */
+            }); 
             
             } else { 
             

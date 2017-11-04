@@ -1,7 +1,15 @@
 (function() {
-    function LandingCtrl($anchorScroll, Albums, Email, $stateParams, $location, $state, Carousel) {
+    function LandingCtrl($anchorScroll, Albums, Email, $stateParams, $location, $state, Carousel, $scope) {
+    
+       /*
+        * @desc clears email signup input tag on click
+        */
         
-        /*
+        $scope.clearForm = function(emailAddress) {
+            this.emailAddress = null;
+        };
+        
+       /*
         * @desc home page Bootstrap billboard
         */
         
@@ -44,5 +52,5 @@
     
     angular
         .module('grabbing-clouds')
-        .controller('LandingCtrl', ['$anchorScroll', 'Albums', 'Email', '$stateParams', '$location', '$state', 'Carousel', LandingCtrl]);
+        .controller('LandingCtrl', ['$anchorScroll', 'Albums', 'Email', '$stateParams', '$location', '$state', 'Carousel', '$scope', LandingCtrl]);
 })();

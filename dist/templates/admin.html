@@ -1,10 +1,19 @@
 <section class="container">
     <uib-tabset active="active">
-        <uib-tab index="0" heading="Add Album">
+        <uib-tab index="0" heading="Log In">
+            <section class="admin-section">
+                <div>
+                    <input id="txtEmail" ng-model="email" type="text" placeholder="Email" class="admin-input"/><br><br>
+                    <input id="txtPassword" ng-model="pass" type="text" placeholder="test" class="admin-input"/><br><br>
+                    <button id="btnLogin" ng-click="logIn(email, pass)" class="admin-button" style="display:inline-block;">Log In</button>
+                    <!--<button id="btnSignUp" ng-click="signUp(email, pass)" class="admin-button" style="display:inline-block;">Sign Up</button>-->
+                    <button id="btnLogOut" ng-click="logOut()" class="admin-button" style="display:inline-block;">Log Out</button>
+                </div>
+            </section>
+        </uib-tab>    
+        <uib-tab index="1" heading="Add Album" ng-style="addAlbum">
             <section class="admin-section">
                 <div class="add-albums-admin">
-                    <p class="admin-p">image</p> 
-                    <input type="text" class="admin-input" ng-model="image" ng-init="image='/assets/images/albums/'"><br>
                     <p class="admin-p">band</p> 
                     <input type="text" class="admin-input" ng-model="band" ng-init="band='band name'"><br>
                     <p class="admin-p">title</p> 
@@ -19,8 +28,6 @@
                     <input type="text" class="admin-input" ng-model="buy" ng-init="buy='buy link'"><br>
                     <p class="admin-p">info</p> 
                     <input type="text" class="admin-input" ng-model="info" ng-init="info='album description'"><br>
-                    <p class="admin-p">bottom</p> 
-                    <input type="text" class="admin-input" ng-model="bottom" ng-init="bottom='/assets/images/album_bottom/'"><br>
                     <p class="admin-p">song 1</p> 
                     <input type="text" class="admin-input" ng-model="songOne"><br>
                     <p class="admin-p">song 2</p> 
@@ -61,7 +68,15 @@
                     <input type="text" class="admin-input" ng-model="songNineteen"><br>
                     <p class="admin-p">song 20</p> 
                     <input type="text" class="admin-input" ng-model="songTwenty">
-                    <button class="admin-button" ng-click="admin.albums.addAlbum(image, band, title, both, url, buy, info, bottom, iframe, songOne, songTwo, songThree, songFour, songFive, songSix, songSeven, songEight, songNine, songTen, songEleven, songTwelve, songThirteen, songFourteen, songFifteen, songSixteen, songSeventeen, songEighteen, songNineteen, songTwenty)">Add Album</button>
+                    <p style="color:#484848;font-size:20px;">upload cover image</p> 
+                    <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/><br/>   
+                    <p style="color:#484848;font-size:20px;">upload bottom album image</p> 
+                    <input type="file" name="file" onchange="angular.element(this).scope().uploadBottom(this.files)"/><br/> 
+                    <button class="admin-button" ng-click="admin.albums.addAlbum(albumCover, band, title, both, url, buy, info, bottom, iframe, songOne, songTwo, songThree, songFour, songFive, songSix, songSeven, songEight, songNine, songTen, songEleven, songTwelve, songThirteen, songFourteen, songFifteen, songSixteen, songSeventeen, songEighteen, songNineteen, songTwenty)">Add Album</button>
+                    <!-- hidden inputs for image ngModels -->
+                    <input type="text" style="visibility:hidden;" class="admin-input" ng-model="albumCover"><br>
+                    <input type="text" style="visibility:hidden;" class="admin-input" ng-model="bottom"><br>
+                    <!-- end hidden inputs for image ngModels -->
                 </div>
                 <h1 class="admin-h1">Delete Album</h1>
                 <div class="delete-admin" ng-repeat="album in admin.albums.albums | orderBy:'index':reverse=true">
@@ -72,16 +87,19 @@
                 </div>     
             </section>
         </uib-tab>
-        <uib-tab index="1" heading="Add News">
+        <uib-tab index="2" heading="Add News" ng-style="addNews">
             <section class="admin-section">
                 <div class="add-news-admin">
                     <p class="admin-p">headline</p> 
                     <input type="text" class="admin-input" ng-model="headline"><br> 
                     <p class="admin-p" style="vertical-align:top;">copy</p> 
-                    <textarea class="textarea" type="text" ng-model="copy" rows="10" cols="85"></textarea><br>
-                    <p class="admin-p">image</p> 
-                    <input type="text" class="admin-input" ng-model="newsImage" ng-init="newsImage='/assets/images/news/...Leave blank for default image'">
+                    <textarea class="textarea" type="text" ng-model="copy" rows="10" cols="85"></textarea><br><br>
+                    <p style="color:#484848;font-size:20px;">upload image</p> 
+                    <input type="file" name="file" onchange="angular.element(this).scope().uploadNewsImage(this.files)"/><br/>   
                     <button class="admin-button" ng-click="admin.news.sendReturnNews(headline, copy, newsImage)">Add News</button>
+                    <!-- hidden inputs for image ngModels -->
+                    <input type="text" class="admin-input" style="visibility:hidden;" ng-model="newsImage">
+                    <!-- end hidden inputs for image ngModels -->
                 </div>
                 <h1 class="admin-h1">Delete News</h1>
                 <div class="delete-admin" ng-repeat="newsItem in admin.news.news | orderBy:'index':reverse=true">
@@ -92,7 +110,7 @@
                 </div>     
             </section>
         </uib-tab>
-        <uib-tab index="2" heading="Add Carousel">
+        <uib-tab index="3" heading="Add Carousel" ng-style="addCarousel">
             <section class="admin-section">
                 <div class="add-carousl-admin">
                     <p class="admin-p">headline</p> 
@@ -101,16 +119,19 @@
                     <input type="text" class="admin-input" ng-model="carText"><br>
                     <p class="admin-p">url</p>
                     <input type="text" class="admin-input" ng-model="carUrl"><br>
-                    <p class="admin-p">image</p> 
-                    <input type="text" class="admin-input" ng-model="carImage" ng-init="carImage='/assets/images/carousel/'"><br>
                     <p class="admin-p">album</p>
                     <div class="priority slate">
                     <select ng-model="carIndex">
                         <option value="">select album</option>
                         <option value="{{ album.index }}" ng-repeat="album in admin.albums.albums | orderBy:'index':reverse=true">{{ album.both }}</option><br>
                      </select>
-                    </div>    
-                <button class="admin-button" ng-click="admin.carousel.addCarousel(carTitle, carText, carImage, carIndex)">Add Carousel</button>
+                    </div>
+                    <p style="color:#484848;font-size:20px;">upload image</p> 
+                    <input type="file" name="file" onchange="angular.element(this).scope().uploadCarouselImage(this.files)"/>
+                <button class="admin-button" ng-click="admin.carousel.addCarousel(carTitle, carText, carImage, carIndex, carUrl)">Add Carousel</button>
+                <!-- hidden inputs for image ngModels -->
+                <input type="text" class="admin-input" style="visibility:hidden;" ng-model="carImage">
+                <!-- end hidden inputs for image ngModels -->
                 </div>
                 <h1 class="admin-h1">Delete Carousel</h1>
                 <div class="delete-admin" ng-repeat="carousels in admin.carousel.carousel | orderBy:'index':reverse=true">

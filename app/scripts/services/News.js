@@ -34,7 +34,7 @@
             
         var newIndex = index +1;
             
-        if (newsImage == undefined || '/assets/images/news/...Leave blank for default image') {
+        if (newsImage == undefined) {
             
             newsImage = '/assets/images/news/news_default.jpg';
         }

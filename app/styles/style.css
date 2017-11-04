@@ -146,12 +146,6 @@ body {
    color: #000000;    
 }
 
-.nav-margin-spacer {
-    position: relative;
-    margin-top: 0;
-    
-}
-
 /* HOVER TRANSITION */
 
 .show-info {
@@ -211,12 +205,17 @@ body {
 
 /* MAIN NAV */
 
+.nav-margin-spacer {
+    position: relative;
+    margin-top: 0;
+}
+
 .nav {
     position: relative;
     background-color: #ff33ff;
     width: 100%;
     font-weight: 700;
-    -moz-transform: rotate(0.02deg);
+    /*-moz-transform: rotate(0.02deg);*/
 }
 
 .nav-container {
@@ -330,6 +329,89 @@ body {
 }
 
 /* END MAIN NAV */
+
+/* COLLAPSED NAV CLASSES */
+
+.marginspacer-collapsed {
+    margin-top: 165px !important;
+    height: none !important;
+}
+
+.nav-collapsed {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 3 !important;
+}
+
+.nav-container-collapsed {
+    padding-right: 10% !important;
+    text-align: none !important;
+    padding-left: 0 !important;
+    padding-top: .2rem !important;
+    height: 66px !important;
+}
+
+.releases-collapsed {
+    font-size: 18px !important;
+    width: 5.1rem !important;
+}
+
+.news-collapsed {
+    font-size: 18px !important;
+    width: 6rem !important;
+}
+
+.shop-collapsed {
+    font-size: 18px !important;
+    width: 6rem !important;
+}
+
+.contact-collapsed {
+    font-size: 18px !important;
+    width: 5rem !important;
+}
+
+.logo-collapsed {
+     display: none !important; 
+}
+
+.nav-logo-collapsed {
+    display: none !important; 
+}
+
+.small-logo-collapsed {
+     display: inline-block !important;
+}
+
+.ul-collapsed {
+    width: 230px !important;    
+    float: left !important; 
+    padding-bottom: 0rem !important;
+    padding-top: 1.2rem !important;
+    display: inline-block !important; 
+}
+
+.instagram-collapsed {
+    display: inline-block !important;
+    padding-top: .7rem !important;
+}
+
+.twitter-collapsed {
+    display: inline-block !important;
+    padding-top: .7rem !important;
+}
+
+.facebook-collapsed {
+    display: inline-block !important; 
+    padding-top: .7rem !important;
+}
+
+.burger-collapsed {
+    display: none !important; 
+}
+
+/* END COLLAPSED NAV CLASSES */
 
 /* CAROUSEL */
 
@@ -983,6 +1065,13 @@ body {
     color: #484848;
     font-size: 18px;
     outline-width: 0;
+}
+
+#uploader {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20%;
+    margin-bottom: 10px;
 }
 
 /* END ADMIN PAGE */

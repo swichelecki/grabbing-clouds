@@ -13,6 +13,7 @@
     /*
      * @desc DOM node objects used to enable the collapsable / responsive nav
      */
+        
     var nav = document.getElementsByClassName('nav');
     var navLogo = document.getElementsByClassName('nav-logo');    
     var logo = document.getElementsByClassName('large-logo');
@@ -42,8 +43,26 @@
      * @desc functions used to enable the collapsable / responsive nav
      */
         
-    var collapsedNav = function() {
-        marginspacer[0].style.marginTop = '165px';
+    var collapsedNav = function() { 
+        marginspacer[0].classList.add('marginspacer-collapsed'); 
+        nav[0].classList.add('nav-collapsed'); 
+        navContainer[0].classList.add('nav-container-collapsed'); 
+        releases[0].classList.add('releases-collapsed'); 
+        news[0].classList.add('news-collapsed'); 
+        shop[0].classList.add('shop-collapsed'); 
+        contact[0].classList.add('contact-collapsed'); 
+        logo[0].classList.add('logo-collapsed'); 
+        navLogo[0].classList.add('nav-logo-collapsed'); 
+        smallLogo[0].classList.add('small-logo-collapsed'); 
+        navContainer[0].classList.add('nav-container-collapsed'); 
+        ul[0].classList.add('ul-collapsed'); 
+        ul[1].classList.add('ul-collapsed'); 
+        instagram[0].classList.add('instagram-collapsed'); 
+        twitter[0].classList.add('twitter-collapsed'); 
+        facebook[0].classList.add('facebook-collapsed'); 
+        burger[0].classList.add('burger-collapsed'); 
+        
+        /*marginspacer[0].style.marginTop = '165px';
         marginspacer[0].style.height = null;
         nav[0].style.position = 'fixed';
         nav[0].style.top = 0;
@@ -81,11 +100,29 @@
         burger[0].style.display = null; 
         instagram[0].style.paddingTop = '.7rem';
         twitter[0].style.paddingTop = '.7rem';
-        facebook[0].style.paddingTop = '.7rem';
+        facebook[0].style.paddingTop = '.7rem';*/
     };   
         
     var fullNav = function() {
-       marginspacer[0].style.marginTop = '0px';
+        marginspacer[0].classList.remove('marginspacer-collapsed'); 
+        nav[0].classList.remove('nav-collapsed'); 
+        navContainer[0].classList.remove('nav-container-collapsed'); 
+        releases[0].classList.remove('releases-collapsed'); 
+        news[0].classList.remove('news-collapsed'); 
+        shop[0].classList.remove('shop-collapsed'); 
+        contact[0].classList.remove('contact-collapsed'); 
+        logo[0].classList.remove('logo-collapsed'); 
+        navLogo[0].classList.remove('nav-logo-collapsed'); 
+        smallLogo[0].classList.remove('small-logo-collapsed'); 
+        navContainer[0].classList.remove('nav-container-collapsed'); 
+        ul[0].classList.remove('ul-collapsed'); 
+        ul[1].classList.remove('ul-collapsed'); 
+        instagram[0].classList.remove('instagram-collapsed'); 
+        twitter[0].classList.remove('twitter-collapsed'); 
+        facebook[0].classList.remove('facebook-collapsed'); 
+        burger[0].classList.remove('burger-collapsed'); 
+        
+       /*marginspacer[0].style.marginTop = '0px';
        marginspacer[0].style.height = null;  
        nav[0].style.position = 'relative';
        nav[0].style.top = null;
@@ -130,7 +167,7 @@
        instagram[0].style.display = 'none';
        twitter[0].style.display = 'none';
        facebook[0].style.display = 'none';
-       burger[0].style.display = null;
+       burger[0].style.display = null;*/
     }; 
         
     /*
@@ -156,6 +193,9 @@
          if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
             
             console.log("FireFox browser"); 
+             
+            var bodyColor = document.getElementsByTagName('body');
+            bodyColor[0].style.backgroundColor = '#ff33ff';
              
             var last_known_scroll_position = 0;
             var client_width = 0;

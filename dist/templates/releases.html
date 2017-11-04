@@ -45,17 +45,17 @@
             <input type="text" class="search-input" ng-model="searchBox" placeholder="Filter albums" onfocus="this.placeholder=''" onblur="placeholder='Filter albums'">
             <span class="magnifying-glass ion-android-search"></span>
         </div> 
-        <div ng-repeat="album in releases.albums.albums | orderBy:'index':reverse=true | filter:searchBox" class="release-div column half">
+        <div ng-repeat="album in releases.albums.albums | orderBy:'index':reverse=true | filter:searchBox" class="release-div column half"> 
              <a ui-sref="album({data:album.url})" class="anchor">
                 <div class="show-info">    
                     <img ng-src="{{album.image}}" class="left-div-image">
                     <div class="overlay">
-                       <h1 class="band-name-hover-band">{{ album.band }}</h1>
-                        <h2 class="band-name-hover-album">{{ album.title }}</h2>
+                       <h1 class="band-name-hover-band">{{album.band}}</h1>
+                        <h2 class="band-name-hover-album">{{album.title}}</h2>
                     </div>
                 </div> 
                 <h3 class="release-album-info">{{album.both}}</h3>
-            </a>
+            </a> 
         </div>
         <div class="to-top-container" id="to-top">
             <button class="to-top-button" ng-click="releases.gotoTop()">Top<span class="ion-arrow-up-a"></span></button>

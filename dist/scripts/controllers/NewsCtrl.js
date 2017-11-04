@@ -1,6 +1,6 @@
 (function() {
-    function NewsCtrl($anchorScroll, $location, News) {
-               
+    function NewsCtrl($anchorScroll, $location, News, $scope) {
+        
        /*
         * @desc ensures page loads at top of page 
         */
@@ -55,11 +55,11 @@
             ipadHeight();
         } else if (window.innerHeight > 1100) {
             ipadProHeight();
-        }
+        }    
        
     }
     
     angular
         .module('grabbing-clouds')
-        .controller('NewsCtrl', ['$anchorScroll', '$location', 'News', NewsCtrl]);
+        .controller('NewsCtrl', ['$anchorScroll', '$location', 'News', '$scope', NewsCtrl]);
 })();

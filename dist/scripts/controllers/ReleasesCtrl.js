@@ -60,20 +60,11 @@
         this.displayFalse = function() {
             display = false;
             
-             if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-                
-                    console.log("call displayFalse() in Firebase");
-                    side_widget_scroll_position = window.scrollY;
+            side_widget_scroll_position = window.scrollY;
+            
                  if (side_widget_scroll_position <= 200) {
                      hide();
                  }
-            
-             } else { 
-                 
-                if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistance) {
-                    hide();
-                }
-            }
         };
     
         var smallInput = document.getElementById('small-input');
@@ -82,20 +73,15 @@
         * desc makes side widget appear and disappear on scroll
         */
         
-       // var toTopId = angular.element(document.getElementById('to-top'));
-       // var toTopId = document.getElementById('to-top');
         var toTopWidget = document.getElementsByClassName('to-top-container')[0];
-        var scrollDistance = toTopWidget.getBoundingClientRect().top + 200;
        
         var show = function() {
             toTopWidget.style.display = 'block';
-            //toTopId.css({'display' : 'block'});
             
         };
         
         var hide = function() {
             toTopWidget.style.display = 'none';
-            //toTopId.css({'display' : 'none'});
            
         };
         
@@ -104,10 +90,6 @@
         */
         
         this.onload = function() {
-            
-            if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-            
-            console.log("FireFox browser on releases page"); 
                 
             window.addEventListener('scroll', function(event) {
             side_widget_scroll_position = window.scrollY;
@@ -122,25 +104,6 @@
             smallInput.addEventListener('click', function(event) {
                     displayTrue();
             }); 
-            
-            } else { 
-            
-            window.addEventListener('scroll', function(event) {
-                
-                if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance) {
-                    show();
-                } else if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistance && display == false) {
-                    hide();
-               
-             } 
-                
-            });
-            
-            smallInput.addEventListener('click', function(event) {
-                displayTrue();
-            });
-            
-           }
             
         }; 
     }

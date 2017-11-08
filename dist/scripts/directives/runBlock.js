@@ -197,6 +197,8 @@
             var bodyColor = document.getElementsByTagName('body');
             bodyColor[0].style.backgroundColor = '#ff33ff';
              
+         }
+             
             var last_known_scroll_position = 0;
             var client_width = 0;
             var offset = window.scrollY + 99;
@@ -226,37 +228,6 @@
                 }
                 
             });
-             
-         } else { 
-             
-            var nav = document.getElementsByClassName('nav')[0];
-            var scrollDistance = nav.getBoundingClientRect().bottom - 66; 
-            var scrollDistanceVeryTop = nav.getBoundingClientRect().top;
-        
-            var fire = null; 
-            console.log(fire);
-    
-            window.addEventListener('scroll', function(event) {
-            if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance && fire == null) {
-                fire = true;
-                console.log(fire);
-            }
-                
-            if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistanceVeryTop && document.documentElement.clientWidth <= 990) {
-                console.log('resonsive width css; collapsedNav() and fullNav() prevented from firing');
-            } else if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance && fire == true) {
-                collapsedNav();
-                fire = false;
-                console.log(fire);
-                console.log('collapsedNav() fired');
-            } else if (document.documentElement.scrollTop || document.body.scrollTop <= scrollDistance && fire == false) {
-                fullNav();
-                fire = null;
-                console.log('fullNav() fired ');
-            }
-            });
-             
-      }
         
        /*
         * @desc event listener used to enable $anchorScroll

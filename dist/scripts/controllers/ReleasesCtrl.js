@@ -23,7 +23,7 @@
         * @desc brings album object data to template from firebase
         */
        
-         this.albums = Albums; 
+        this.albums = Albums; 
         
        /*
         * desc makes body-height class taller for iPads

@@ -522,6 +522,7 @@ body {
     height: 32px;
     cursor: pointer;
     border: none; 
+    border-radius: 0;
 }
 
 .add-email a:hover {
@@ -702,6 +703,7 @@ body {
     border: 1px solid #ff33ff;
     color: #ff33ff;
     outline-width: 0;
+    border-radius: 0;
 }
 
 .ion-arrow-up-a {
@@ -972,6 +974,7 @@ body {
     outline: none; 
     padding: .5rem;
     font-size: 16px;
+    border-radius: 0;
 }
 
 .admin-button:active {

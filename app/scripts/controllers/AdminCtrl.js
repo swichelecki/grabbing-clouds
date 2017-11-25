@@ -26,20 +26,38 @@
         var carouselPhoto = [];
         
        /*
+        * @desc displays Dennis Nedry 
+        */
+        
+        var magicWord = function() {
+           
+            var magicWord = document.getElementsByClassName('magicword');
+            
+            magicWord[0].style.display = "block";
+           
+        };
+        
+       /*
         * @desc Firebase log in and log out 
         */
         
         $scope.logIn = function(email, pass) {
-         
+  
             const auth = firebase.auth();
-            
             const promise = auth.signInWithEmailAndPassword(email, pass);
-            promise.catch(e => console.log(e.message)).then(function() {
+            promise.catch(function(error){
+            
+            Error.sound.play(); 
                 
+            setTimeout(function(){ magicWord(); }, 200);
+                          
+                          }).then(function() {
+        
                 $scope.addAlbum = { 'display' : 'block'};
                 $scope.addNews = { 'display' : 'block' };
                 $scope.addCarousel = { 'display' : 'block' };
                 $state.reload();
+                
             });
         };
         
@@ -63,14 +81,16 @@
         firebase.auth().onAuthStateChanged(firebaseUser => {
            
             if(firebaseUser) {
-                console.log(firebaseUser); 
+        
+                console.log(firebaseUser);    
                 
             } else {
+                 
                 console.log('not logged in');
                 $scope.addAlbum = { 'display' : 'none'};
                 $scope.addNews = { 'display' : 'none' };
-                $scope.addCarousel = { 'display' : 'none' };
-                    
+                $scope.addCarousel = { 'display' : 'none' };    
+                
             }
             
         });
@@ -185,6 +205,12 @@
             });
         });
     };
+       
+   /*
+    * @desc buzz object constructor for error mp3
+    */    
+        
+    Error.sound = new buzz.sound("/assets/sounds/magicword.mp3", {preload: true});
         
     }
     
